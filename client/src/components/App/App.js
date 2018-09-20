@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import request from 'axios'
+import { Route } from 'react-router-dom'
 
-import banner from './Pac-Hack_Banner.jpg'
+// import banner from './Pac-Hack_Banner.jpg'
 import './App.css'
-import SignIn from './components/SignIn/SignIn'
+import Home from '../Home/Home'
 
 class App extends Component {
   componentDidMount () {
@@ -18,7 +19,9 @@ class App extends Component {
 
   render () {
     return (
-      <SignIn/>
+      <div className="App">
+        <Route exact path='/' component={Home} />
+      </div>
     )
   }
 }
