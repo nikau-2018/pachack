@@ -4,14 +4,17 @@ const {generateHash} = require('../auth/hash')
 
 const router = express.Router()
 
-const userdb = require('./users')
+const {getUser} = require('./users')
 
 router.post('/login', login)
 
 function login (req, res) {
   const {username, password} = req.body
   generateHash(password)
-  .then (hash => getUser(username)
+  .then (hash => {
+      getUser(username)
+      .then((user) => )
+    }
 )
 
   if (password === 'password') {
