@@ -1,10 +1,12 @@
 const connection = require('./')
 
 module.exports = {
-  getUsers
+  getUser
 }
 
 // Sample only: think about what you want this function to actually do...
-function getUsers (db = connection) {
-  return db('users').select('id', 'username')
+function getUser (username, db = connection) {
+  return db('users')
+    .where('username', username)
+    .first()
 }
