@@ -1,7 +1,11 @@
 import {combineReducers} from 'redux'
 
-import users from './users'
+import error from './error'
+import login from './login'
+import pending from './pending'
 
 export default combineReducers({
-  users
+  error,
+  login,
+  pending
 })
