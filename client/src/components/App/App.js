@@ -6,6 +6,7 @@ import { Route } from 'react-router-dom'
 import './App.css'
 import Home from '../Home/Home'
 import Lunchbox from '../Lunchbox'
+import Profile from '../Profile/Profile'
 
 class App extends Component {
   componentDidMount () {
@@ -25,6 +26,7 @@ class App extends Component {
       <div className="App">
         <Route exact path='/' component={Home} />
         <Route path='/lunchbox' component={Lunchbox} />
+        <Route path='/profile' component={Profile} />
       </div>
     )
   }
