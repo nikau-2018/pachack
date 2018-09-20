@@ -3,7 +3,6 @@ import request from 'axios'
 export const LOGIN_PENDING = 'LOGIN_PENDING'
 export const LOGIN = 'LOGIN'
 export const LOGIN_ERROR = 'LOGIN_ERROR'
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 
 export const loginPending = () => {
   return {
@@ -12,16 +11,15 @@ export const loginPending = () => {
   }
 }
 
-export const loginSuccess = (user) => {
+export const login = (user) => {
   return {
-    type: LOGIN_SUCCESS,
-    loggedIn: true,
+    type: LOGIN,
     token: user.token
 
   }
 }
 
-export const login = (username, password) => {
+export const loginUser = (username, password) => {
   return (dispatch) => {
     // dispatch action
     dispatch(loginPending())
@@ -30,13 +28,13 @@ export const login = (username, password) => {
     // post
       .post(`/api/v1/auth/login`, {username, password})
       .then(res => {
-        dispatch(loginSuccess(res.user))
+        dispatch(login(res.user))
       })
       .catch(err => {
         dispatch(loginError(error)
-      )
+        )
+      })
   }
-}
 }
 
 export const loginError = (error) => {
