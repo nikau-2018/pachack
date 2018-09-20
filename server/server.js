@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path')
 
+const authRoutes = require('./routes/auth')
+
 const users = require('./routes/users')
 
 const server = express()
@@ -11,6 +13,7 @@ if (process.env.NODE_ENV === 'production') {
 
 server.use(express.json())
 server.use('/api/v1/users', users)
+server.use('/api/v1/auth', authRoutes)
 
 // In production, serve any request not covered by the above as the built index
 // from CRA's `yarn build` (for BrowserRouter)
