@@ -1,12 +1,12 @@
 exports.up = knex =>
   knex.schema.createTable('lunchboxes', t => {
     t.increments('id').primary()
-    t.integer('user_id')
-    t.string('produce')
-    t.string('grains')
-    t.string('dairy')
-    t.string('protein')
-    t.string('other')
+    t.integer('user_id').references('users.id')
+    t.integer('produce')
+    t.integer('grains')
+    t.integer('dairy')
+    t.integer('protein')
+    t.integer('other')
     t.timestamps()
   })
 

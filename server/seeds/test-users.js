@@ -5,9 +5,12 @@ exports.seed = function (knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('users').insert([
-        {id: 88801, username: 'Tom_Hall', hash: , age:'8'},
-        {id: 88802, username: '', hash:, age: 5},
-        {id: 88803, username: '', hash:, age: }
-      ]);
-    });
-};
+        {id: 88801, username: 'tomh', hash: 'purple', age: 8},
+        {id: 88802, username: 'sallyg', hash: 'yellow', age: 5},
+        {id: 88803, username: 'bobb', hash: 'pink', age: 6},
+        {id: 88804, username: 'sarahm', hash: 'orange', age: 4},
+        {id: 88805, username: 'harrys', hash: 'red', age: 5},
+        {id: 88806, username: 'gracen', hash: 'green', age: 7}
+      ])
+    })
+}
