@@ -1,6 +1,9 @@
+import request from 'axios'
+
 export const LOGIN_PENDING = 'LOGIN_PENDING'
 export const LOGIN = 'LOGIN'
 export const LOGIN_ERROR = 'LOGIN_ERROR'
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 
 export const loginPending = () => {
   return {
@@ -9,16 +12,25 @@ export const loginPending = () => {
   }
 }
 
-export const login = (userName, password) => {
+export const loginSuccess = (user) => {
+  return {
+    type: LOGIN_SUCCESS,
+    loggedIn: true,
+    token: ''
+
+  }
+}
+
+export const login = (username, password) => {
   return (dispatch) => {
     // dispatch action
     dispatch(loginPending())
     // perform async request
     return request
     // post
-      .post(`/api/v1/users/${userName}`)
+      .post(`/api/v1/auth/login`, {username, password})
       .then(res => {
-        dispatch(login(res.users))
+        dispatch(loginSuccess(res.users))
       })
       .catch(err => {
         dispatch(error)
