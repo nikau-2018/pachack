@@ -32,7 +32,8 @@ router.post('/register', register)
 
 function register (req, res) {
   const {username, password, age} = req.body
-  createUser({username, password, age})
+  const hash = generateHash(password)
+  createUser({username, hash, age})
     .then(() => res.status(201).json({ok: true,
       user: {
         username, age
