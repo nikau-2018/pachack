@@ -16,7 +16,7 @@ export const loginSuccess = (user) => {
   return {
     type: LOGIN_SUCCESS,
     loggedIn: true,
-    token: ''
+    token: user.token
 
   }
 }
@@ -30,31 +30,18 @@ export const login = (username, password) => {
     // post
       .post(`/api/v1/auth/login`, {username, password})
       .then(res => {
-        dispatch(loginSuccess(res.users))
+        dispatch(loginSuccess(res.user))
       })
       .catch(err => {
-        dispatch(error)
-      })
+        dispatch(loginError(error)
+      )
   }
+}
 }
 
 export const loginError = (error) => {
   return {
     type: LOGIN_ERROR,
     error
-  }
-}
-
-export function fetchPosts (subreddit) {
-  return (dispatch) => {
-    dispatch(requestPosts())
-    return request
-      .get(`/api/v1/reddit/subreddit/${subreddit}`)
-      .then(res => {
-        dispatch(receivePosts(res.body))
-      })
-      .catch(err => {
-        dispatch(showError(err.message))
-      })
   }
 }
