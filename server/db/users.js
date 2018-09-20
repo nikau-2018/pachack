@@ -9,9 +9,9 @@ module.exports = {
 function getUser (username, db = connection) {
   return db('users')
     .where('username', username)
-    .select('id', 'username', 'hash', 'age')
+    .first()
 }
 
-function createUser ({username, password, age}, db = connection) {
-  return db('users').insert({username, hash: password, age})
+function createUser ({username, hash, age}, db = connection) {
+  return db('users').insert({username, hash, age})
 }
