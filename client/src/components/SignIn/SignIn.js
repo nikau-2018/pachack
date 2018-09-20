@@ -23,7 +23,7 @@ export default class SignIn extends Component {
   render () {
     return (
       <div>
-        <p>Username: <input className='username'
+        <p>Username: Amy<input className='username'
           type='text'
           name='username'
           value={this.state.username}
