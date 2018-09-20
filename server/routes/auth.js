@@ -1,34 +1,51 @@
 const express = require('express')
 
-const {generateHash} = require('../auth/hash')
+const {checkHash, generateHash} = require('../auth/hash')
+const {createUser, getUser} = require('../db/users')
+const {getToken} = require('../auth/token')
 
 const router = express.Router()
 
-const {getUser, createUser} = require('./users')
-
-// this is the password hashing I am working on
-/* router.post('/login', login)
- function login (req, res) {
-  const {username, password} = req.body
-  generateHash(password)
-    .then(hash => getuser(username))
-  if (password === 'password') {
-    return res.json({
-      ok: true,
-      user: {
-        id: 1,
-        username,
-        age: 10
-      }
-    })
-  }
-  res.json({
-    ok: false,
-    error: 'Password incorrect.'
-  })
-} */
-
+router.post('/login', login)
 router.post('/register', register)
+
+function login (req, res) {
+  const { username, password } = req.body
+
+  return getUser(username)
+    .then(user => {
+      if (!user) {
+        return res.status(400).json({
+          ok: false,
+          error: 'That user does not exist.'
+        })
+      }
+
+      const { age, hash, id, username } = user
+
+      checkHash(hash, password)
+        .then(ok => {
+          if (!ok) {
+            return res.status(403).json({
+              ok: false,
+              error: 'Password incorrect.'
+            })
+          }
+
+          const token = getToken(id)
+
+          return res.json({
+            ok: true,
+            user: { age, id, username },
+            token
+          })
+        })
+    })
+    .catch(() => res.json({
+      ok: false,
+      error: 'An unknown error occurred.'
+    }))
+}
 
 function register (req, res) {
   const {username, password, age} = req.body
