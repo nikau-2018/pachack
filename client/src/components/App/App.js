@@ -12,8 +12,10 @@ class App extends Component {
     request
       .get('/api/v1/users')
       .then(res => {
+      // eslint-disable-next-line no-console
         console.log('Yup, API on 3001 sent:', res.data, 'with status', res.status)
       })
+      // eslint-disable-next-line no-console
       .catch(console.error)
   }
 
