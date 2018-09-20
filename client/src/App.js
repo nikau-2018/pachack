@@ -3,6 +3,7 @@ import request from 'axios'
 
 import banner from './Pac-Hack_Banner.jpg'
 import './App.css'
+import SignIn from './components/SignIn/SignIn'
 
 class App extends Component {
   componentDidMount () {
@@ -17,9 +18,7 @@ class App extends Component {
 
   render () {
     return (
-      <header className="App-header">
-        <img src={banner} className="App-logo" alt="banner" />
-      </header>
+      <SignIn/>
     )
   }
 }
