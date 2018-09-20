@@ -1,12 +1,13 @@
 const express = require('express')
 
-const {checkHash} = require('../auth/hash')
-const {getUser} = require('../db/users')
+const {checkHash, generateHash} = require('../auth/hash')
+const {createUser, getUser} = require('../db/users')
 const {getToken} = require('../auth/token')
 
 const router = express.Router()
 
 router.post('/login', login)
+router.post('/register', register)
 
 function login (req, res) {
   const { username, password } = req.body
@@ -44,6 +45,28 @@ function login (req, res) {
       ok: false,
       error: 'An unknown error occurred.'
     }))
+}
+
+function register (req, res) {
+  const {username, password, age} = req.body
+  const hash = generateHash(password)
+  createUser({username, hash, age})
+    .then(() => res.status(201).json({ok: true,
+      user: {
+        username, age
+      }}))
+    .catch((error) => {
+      if (error.message.includes('UNIQUE constraint failed: users.username')) {
+        return res.status(400).json({
+          ok: false,
+          message: 'That user already exists.'
+        })
+      }
+      res.status(500).json({
+        ok: false,
+        message: error.message
+      })
+    })
 }
 
 module.exports = router
