@@ -11,7 +11,7 @@ router.post('/login', login)
 function login (req, res) {
   const {username, password} = req.body
   generateHash(password)
-  .then (hash => getuser(username)
+  .then (hash => getUser(username)
 )
 
   if (password === 'password') {
