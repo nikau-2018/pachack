@@ -7,6 +7,6 @@ module.exports = {
 // Sample only: think about what you want this function to actually do...
 function getUser (username, db = connection) {
   return db('users')
-  .where('username', username)
-  .select('id', 'username', 'hash', 'age')
+    .where('username', username)
+    .first()
 }
