@@ -14,7 +14,7 @@ export const loginPending = () => {
 export const login = (user) => {
   return {
     type: LOGIN,
-    token: user.token
+    user
 
   }
 }
@@ -30,9 +30,8 @@ export const loginUser = (username, password) => {
       .then(res => {
         dispatch(login(res.user))
       })
-      .catch(err => {
-        dispatch(loginError(error)
-        )
+      .catch(() => {
+        dispatch(loginError())
       })
   }
 }
