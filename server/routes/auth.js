@@ -1,10 +1,10 @@
 const express = require('express')
 
-const {checkHash, generateHash} = require('../auth/hash')
+const {checkHash} = require('../auth/hash')
+const {getUser} = require('../db/users')
+const {getToken} = require('../auth/token')
 
 const router = express.Router()
-
-const {getUser} = require('../db/users')
 
 router.post('/login', login)
 
@@ -31,9 +31,12 @@ function login (req, res) {
             })
           }
 
+          const token = getToken(id)
+
           return res.json({
             ok: true,
-            user: { age, id, username }
+            user: { age, id, username },
+            token
           })
         })
     })
