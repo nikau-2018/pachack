@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom'
 // import banner from './Pac-Hack_Banner.jpg'
 import './App.css'
 import Home from '../Home/Home'
+import Lunchbox from '../Lunchbox'
 
 class App extends Component {
   componentDidMount () {
@@ -23,6 +24,7 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path='/' component={Home} />
+        <Route path='/lunchbox' component={Lunchbox} />
       </div>
     )
   }
