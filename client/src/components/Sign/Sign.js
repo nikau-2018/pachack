@@ -12,10 +12,6 @@ class Sign extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  componentDidMount () {
-    
-  }
-
   handleSubmit (e) {
     this.setState({
       signin: !this.state.signin
