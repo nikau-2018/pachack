@@ -7,7 +7,8 @@ class Sign extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      signin: true
+      signin: true,
+      currentUser: props.currentUser
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
