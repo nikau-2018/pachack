@@ -21,12 +21,15 @@ class Sign extends Component {
 
   render () {
     return (
-      <div>
-        <button onClick={this.handleSubmit}>Sign Up</button>
-        <p>{this.state.signin ? <SignIn /> : <SignUp/>}</p>
+      <div style={{padding: 40}}>
+        <div className="col-md-2"><button style={{marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}}className="btn btn-primary" onClick={this.handleSubmit}>Sign Up</button></div>
+        <div className="row"><div className="col-md-4"><p>{this.state.signin ? <SignIn /> : <SignUp/>}</p></div></div>
       </div>
+
     )
   }
 }
 
 export default Sign
+
+
