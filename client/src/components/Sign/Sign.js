@@ -37,13 +37,20 @@ class Sign extends Component {
 
     return (
       <div style={{padding: 40}}>
-        <div className="col-md-2"><button style={{marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}}className="btn btn-primary" onClick={this.handleSubmit}>Sign Up</button></div>
-        <div className="row"><div className="col-md-4"><p>{this.state.signin ? <SignIn login={login} /> : <SignUp/>}</p></div></div>
-      <div>
+
+        <div className="col-md-2">
+          <button style={{marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}}className="btn btn-primary" onClick={this.handleSubmit}>Sign Up</button>
+        </div>
+
+        <div className="row">
+          <div className="col-md-4">
+            <p>{this.state.signin ? <SignIn login={login} /> : <SignUp/>}</p>
+          </div>
+        </div>
+
+      </div>
     )
   }
 }
 
 export default Sign
-
-
