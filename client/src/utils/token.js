@@ -1,5 +1,5 @@
 export function setToken (token) {
-  localStorage.setItem('_LUNCHBUNCH_JWT')
+  localStorage.setItem('_LUNCHBUNCH_JWT', token)
 }
 
 export function getToken () {
