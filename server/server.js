@@ -4,6 +4,7 @@ const path = require('path')
 const users = require('./routes/users')
 const foods = require('./routes/foods')
 const authRoutes = require('./routes/auth')
+const lunchboxRoutes = require('./routes/lunchboxes')
 
 const server = express()
 
@@ -14,6 +15,7 @@ if (process.env.NODE_ENV === 'production') {
 server.use(express.json())
 server.use('/api/v1/users', users)
 server.use('/api/v1/auth', authRoutes)
+server.use('/api/v1/lunchboxes', lunchboxRoutes)
 server.use('/api/v1/foods', foods)
 
 // In production, serve any request not covered by the above as the built index
