@@ -18,7 +18,7 @@
     "nodemon": "^1.18.4"
   },
   "scripts": {
-    "dev": "nodemon index",
+    "dev": "nodemon index --inspect",
     "start": "node index"
   }
 }
