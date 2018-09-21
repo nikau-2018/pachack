@@ -1,4 +1,10 @@
 import { connect } from 'react-redux'
 import Lunchbox from './Lunchbox'
 
-export default connect()(Lunchbox)
+const mapStateToProps = (state) => {
+  return {
+    lunchbox: state.lunchbox
+  }
+}
+
+export default connect(mapStateToProps)(Lunchbox)
