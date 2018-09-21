@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Redirect} from 'react-router-dom'
 
 import SignIn from '../SignIn/SignIn'
 import SignUp from '../SignUp/SignUp'
@@ -20,10 +21,24 @@ class Sign extends Component {
   }
 
   render () {
+    const { currentUser, login } = this.props
+
+    if (currentUser === 'pending') {
+      return (
+        <div>Logging in...</div>
+      )
+    }
+
+    if (currentUser && currentUser.id) {
+      return (
+        <Redirect to='/profile' />
+      )
+    }
+
     return (
       <div>
         <button onClick={this.handleSubmit}>Sign Up</button>
-        <p>{this.state.signin ? <SignIn /> : <SignUp/>}</p>
+        <div>{this.state.signin ? <SignIn login={login} /> : <SignUp/>}</div>
       </div>
     )
   }
