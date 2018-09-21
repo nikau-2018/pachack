@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React, { Component } from 'react'
 
 export default class SignIn extends Component {
   constructor (props) {
@@ -8,7 +8,7 @@ export default class SignIn extends Component {
       password: ''
     }
     this.handleChange = this.handleChange.bind(this)
-    // this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange (e) {
@@ -17,8 +17,9 @@ export default class SignIn extends Component {
     })
   }
 
-  // handleSubmit (e) {
-  // }
+  handleSubmit (e) {
+    this.props.login(this.state.username, this.state.password)
+  }
 
   render () {
     return (
@@ -35,7 +36,7 @@ export default class SignIn extends Component {
           name='password'
           value={this.state.password}
           onChange={this.handleChange}/>
-        <button className="btn btn-primary" style={{margin: 20, marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}} type='submit'>Submit</button>
+        <button onClick={this.handleSubmit} className="btn btn-primary" style={{margin: 20, marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}} type='submit'>Submit</button>
         </p>
       </div>
     )
