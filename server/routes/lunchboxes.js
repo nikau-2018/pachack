@@ -8,7 +8,6 @@ router.post('/', newLunchbox)
 
 function newLunchbox (req, res) {
   const { userId } = req.body
-  console.log(userId)
   createLunchbox(userId)
     .then((id) => getLunchbox(id[0]))
     .then((lunchbox) => res.status(201).json({
