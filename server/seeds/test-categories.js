@@ -1,0 +1,14 @@
+exports.seed = function (knex, Promise) {
+  // Deletes ALL existing entries
+  return knex('categories').del()
+    .then(function () {
+      // Inserts seed entries
+      return knex('categories').insert([
+        {id: 1, name: 'produce'},
+        {id: 2, name: 'grains'},
+        {id: 3, name: 'dairy'},
+        {id: 4, name: 'protein'},
+        {id: 5, name: 'other'}
+      ])
+    })
+}
