@@ -7,6 +7,7 @@ export default class Profile extends Component {
         <h1>User&#39;s Lunch Bunch Homepage!</h1>
         <p>Welcome to your Lunch Bunch home. Let&#39;s build a lunchbox together.</p>
         <button>Build My Lunch</button>
+        <button>Create lunchbox</button>
       </div>
     )
   }
