@@ -5,6 +5,7 @@ export const LOGIN = 'LOGIN'
 export const LOGIN_ERROR = 'LOGIN_ERROR'
 export const CREATE_LUNCHBOX_PENDING = 'CREATE_LUNCHBOX_PENDING'
 
+// User login actions
 export const loginPending = () => {
   return {
     type: LOGIN_PENDING
@@ -44,6 +45,7 @@ export const loginError = (error) => {
   }
 }
 
+// Lunchbox actions
 export const createLunchboxPending = () => {
   return {
     type: CREATE_LUNCHBOX_PENDING
@@ -54,6 +56,7 @@ export const createLunchbox = (userId) => {
   return (dispatch) => {
     // dispatch action
     dispatch(createLunchboxPending())
+    
     // perform async request
     return request
     // post
