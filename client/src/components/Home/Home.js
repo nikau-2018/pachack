@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
-import Sign from '../Sign/Sign'
+import Sign from '../Sign'
 
 class Home extends Component {
   constructor (props) {
@@ -13,7 +13,7 @@ class Home extends Component {
   }
   render () {
     return (
-      <div>
+      <div className="container-fluid">
         <Header />
         <Sign />
         <Footer />

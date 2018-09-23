@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Footer = () => (
-  <div>
+  <div style={{bottom: 0, position: 'fixed'}}>
     <p>PacHack 2018</p>
   </div>
 )
