@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom'
 import './App.css'
 import Home from '../Home/Home'
 import Lunchbox from '../Lunchbox'
-import Profile from '../Profile/Profile'
+import Profile from '../Profile'
 
 class App extends Component {
   componentDidMount () {

@@ -7,7 +7,7 @@ const router = express.Router()
 router.post('/', newLunchbox)
 
 function newLunchbox (req, res) {
-  const { userId } = req.body
+  const {userId} = req.body
   createLunchbox(userId)
     .then((id) => getLunchbox(id[0]))
     .then((lunchbox) => res.status(201).json({

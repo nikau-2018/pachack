@@ -1,13 +1,16 @@
 import {combineReducers} from 'redux'
 
-import error from './error'
+import loginError from './loginError'
 import login from './login'
-import pending from './pending'
+import { loginState, lunchboxState } from './pending'
 import currentUser from './currentUser'
+import lunchboxError from './lunchboxError'
 
 export default combineReducers({
-  error,
+  loginError,
   login,
-  pending,
-  currentUser
+  loginState,
+  currentUser,
+  lunchboxState,
+  lunchboxError
 })
