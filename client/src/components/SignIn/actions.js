@@ -27,7 +27,7 @@ export const signInUser = (username, password) => {
 
         dispatch(signIn(res.data.user))
       })
-      .catch(err => dispatch(signInError(err)))
+      .catch(({response}) => dispatch(signInError(response.data.error)))
   }
 }
 

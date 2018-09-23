@@ -25,6 +25,6 @@ export const createLunchbox = userId => {
     return request
       .post(`/api/v1/lunchboxes`, {userId}, getHeaders())
       .then(res => dispatch(createLunchboxAction(res.data.lunchbox)))
-      .catch(err => dispatch(createLunchboxError(err.message)))
+      .catch(({response}) => dispatch(createLunchboxError(response.data.error)))
   }
 }
