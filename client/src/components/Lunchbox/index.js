@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import Lunchbox from './Lunchbox'
 
-const mapStateToProps = ({lunchbox}) => ({lunchbox})
+const mapStateToProps = ({currentBox}) => ({currentBox})
 
 export default connect(mapStateToProps)(Lunchbox)

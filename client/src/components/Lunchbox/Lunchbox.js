@@ -4,14 +4,14 @@ import './Lunchbox.css'
 
 export default class Lunchbox extends Component {
   render () {
-    const { lunchbox } = this.props
+    const {currentBox} = this.props
 
     return (
       <div className='lunchbox'>
 
         <div className='produce'>
           <div className='currentstate-produce'>
-            {lunchbox.produce}
+            {currentBox.lunchbox.produce}
           </div>
           <div className='producebutton'>
             <button>Cucumber</button>
@@ -20,7 +20,7 @@ export default class Lunchbox extends Component {
 
         <div className='grains'>
           <div className='currentstate-grains'>
-            {lunchbox.grains}
+            {currentBox.lunchbox.grains}
           </div>
           <div className='grainsbutton'>
             <button>Wheat</button>
@@ -29,7 +29,7 @@ export default class Lunchbox extends Component {
 
         <div className='dairy'>
           <div className='currentstate-dairy'>
-            {lunchbox.dairy}
+            {currentBox.lunchbox.dairy}
           </div>
           <div className='dairybutton'>
             <button>Milk</button>
@@ -38,7 +38,7 @@ export default class Lunchbox extends Component {
 
         <div className='protein'>
           <div className='currentstate-protein'>
-            {lunchbox.protein}
+            {currentBox.lunchbox.protein}
           </div>
           <div className='proteinbutton'>
             <button>Chicken</button>
@@ -47,7 +47,7 @@ export default class Lunchbox extends Component {
 
         <div className='other'>
           <div className='currentstate-other'>
-            {lunchbox.other}
+            {currentBox.lunchbox.other}
           </div>
           <div className='otherbutton'>
             <button>Chocolate</button>
