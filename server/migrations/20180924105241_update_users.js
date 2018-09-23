@@ -1,6 +1,6 @@
 exports.up = knex =>
   knex.schema.table('users', t => {
-    t.string('date_created')
+    t.timestamps(true, true)
   })
 
-exports.down = knex => knex.schema.dropTable('users')
+exports.down = knex => knex.schema.table.dropTimestamps()
