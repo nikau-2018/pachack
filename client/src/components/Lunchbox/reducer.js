@@ -1,7 +1,7 @@
 import {
   GET_FOODS_PENDING,
   GET_FOODS,
-  GET_FOODS_ERROR } from './Lunchbox'
+  GET_FOODS_ERROR } from './actions'
 
 const defaultState = {
   foods: null,
