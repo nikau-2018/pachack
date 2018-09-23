@@ -48,6 +48,7 @@ export const loginUser = (username, password) => {
         dispatch(login(res.data.user))
       })
       .catch(err => {
+        // eslint-disable-next-line no-console
         console.log(err, 'nope')
         dispatch(loginError())
       })
@@ -60,13 +61,13 @@ export const createLunchboxPending = () => (
 )
 
 export const createLunchboxAction = (lunchbox) => (
-{
-  type: CREATE_LUNCHBOX,
-  lunchbox
-}
+  {
+    type: CREATE_LUNCHBOX,
+    lunchbox
+  }
 )
 
-export const createLunchboxError = () => (
+export const createLunchboxError = (error) => (
   {
     type: CREATE_LUNCHBOX_ERROR,
     error

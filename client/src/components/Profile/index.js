@@ -1,4 +1,4 @@
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import Profile from './Profile'
 
 import {createLunchbox} from '../../actions'
