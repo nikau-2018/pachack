@@ -9,51 +9,64 @@ export default class Lunchbox extends Component {
     return (
       <div className='lunchbox'>
 
-        <div className='produce'>
-          <div className='currentstate-produce'>
-            {currentBox.lunchbox.produce}
+        <div className='row top'>
+          <div className='col-md-6 compartment' >
+            <div className='produce'>
+              <div className='producebutton'>
+                <button>Cucumber</button>
+              </div>
+              <div className='currentstate-produce'>
+                {currentBox.lunchbox ? currentBox.lunchbox.produce : <p>empty</p>}
+              </div>
+            </div>
           </div>
-          <div className='producebutton'>
-            <button>Cucumber</button>
+
+          <div className='col-md-6 compartment'>
+            <div className='grains'>
+              <div className='grainsbutton'>
+                <button>Wheat</button>
+              </div>
+              <div className='currentstate-grains'>
+                {currentBox.lunchbox ? currentBox.lunchbox.grains : <p>empty</p>}
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className='grains'>
-          <div className='currentstate-grains'>
-            {currentBox.lunchbox.grains}
+        <div className='row'>
+          <div className='col-md-4 compartment'>
+            <div className='dairy'>
+              <div className='dairybutton'>
+                <button>Milk</button>
+              </div>
+              <div className='currentstate-dairy'>
+                {currentBox.lunchbox ? currentBox.lunchbox.dairy : <p>empty</p>}
+              </div>
+            </div>
           </div>
-          <div className='grainsbutton'>
-            <button>Wheat</button>
+
+          <div className='col-md-4 compartment'>
+            <div className='protein'>
+              <div className='proteinbutton'>
+                <button>Chicken</button>
+              </div>
+              <div className='currentstate-protein'>
+                {currentBox.lunchbox ? currentBox.lunchbox.protein : <p>empty</p>}
+              </div>
+            </div>
+          </div>
+
+          <div className='col-md-4 compartment'>
+            <div className='other'>
+              <div className='otherbutton'>
+                <button>Chocolate</button>
+              </div>
+              <div className='currentstate-other'>
+                {currentBox.lunchbox ? currentBox.lunchbox.other : <p>empty</p>}
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className='dairy'>
-          <div className='currentstate-dairy'>
-            {currentBox.lunchbox.dairy}
-          </div>
-          <div className='dairybutton'>
-            <button>Milk</button>
-          </div>
-        </div>
-
-        <div className='protein'>
-          <div className='currentstate-protein'>
-            {currentBox.lunchbox.protein}
-          </div>
-          <div className='proteinbutton'>
-            <button>Chicken</button>
-          </div>
-        </div>
-
-        <div className='other'>
-          <div className='currentstate-other'>
-            {currentBox.lunchbox.other}
-          </div>
-          <div className='otherbutton'>
-            <button>Chocolate</button>
-          </div>
-        </div>
-
       </div>
     )
   }
