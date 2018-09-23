@@ -83,7 +83,7 @@ export const createLunchbox = (userId) => {
     // post lunchbox
       .post(`/api/v1/lunchboxes`, {userId})
       .then(res => {
-        dispatch(createLunchboxAction())
+        dispatch(createLunchboxAction(res.data.lunchbox))
       })
       .catch(() => {
         dispatch(createLunchboxError())
