@@ -1,7 +1,6 @@
-exports.up = (knex, Promise) => {
-  
-}
+exports.up = knex => 
+  knex.schema.table('users', t => {
+    
+  })
 
-exports.down = (knex, Promise) => {
-  
-}
+exports.down = knex => knex.schema.dropTable('users')
