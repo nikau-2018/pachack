@@ -63,11 +63,11 @@ export const createLunchbox = (userId) => {
   return (dispatch) => {
     // dispatch action
     dispatch(createLunchboxPending())
-    
+
     // perform async request
     return request
-    // post
-      .post(`/api/v1/auth/login`, {username, password})
+    // post lunchbox
+      .post(`/api/v1/lunchboxes`, {userId})
       .then(res => {
         dispatch(login(res.user))
       })
