@@ -7,4 +7,6 @@ export function getHeaders () {
       headers: { 'Authorization': `Bearer ${token}` }
     }
   }
+
+  return {}
 }
