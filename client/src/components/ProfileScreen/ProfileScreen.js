@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
 
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
+import Header from '../Header'
+import Footer from '../Footer'
 
-export default class Profile extends Component {
-  constructor(props) {
+export default class ProfileScreen extends Component {
+  constructor (props) {
     super(props)
-    this.state = {
-      currentUser: props.currentUser
-    }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
-  
+
   handleSubmit () {
-    this.props.createLunchbox(currentUser.id)
+    const { user } = this.props.currentUser
+    this.props.createLunchbox(user.id)
   }
 
   render () {

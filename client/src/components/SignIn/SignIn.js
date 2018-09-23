@@ -1,43 +1,64 @@
 import React, { Component } from 'react'
+import {Redirect} from 'react-router-dom'
+
+import SignInForm from '../SignInForm'
+import RegisterForm from '../RegisterForm'
 
 export default class SignIn extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      username: '',
-      password: ''
+      signin: true
     }
-    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange (e) {
+  handleSubmit (e) {
     this.setState({
-      [e.target.name]: e.target.value
+      signin: !this.state.signin
     })
   }
 
-  handleSubmit (e) {
-    this.props.login(this.state.username, this.state.password)
-  }
-
   render () {
+    // Confused by this syntax? It's just another destructure, but we're looking for the inside
+    // contents of `currentUser`! See
+    // https://javascript.info/destructuring-assignment#nested-destructuring for more info
+    const { currentUser: { error, pending, user }, signIn } = this.props
+
+    // Still waiting for request to finish
+    if (pending) {
+      return (
+        <div>Logging in...</div>
+      )
+    }
+
+    // We have a user, don't show <SignInForm />
+    if (user) {
+      return (
+        <Redirect to='profile' />
+      )
+    }
+
     return (
-      <div>
-        <h3>Log In</h3>
-        <p>Username: <input className='username form-control'
-          type='text'
-          name='username'
-          value={this.state.username}
-          onChange={this.handleChange}/>
-        </p>
-        <p>Password: <input className='password form-control'
-          type='text'
-          name='password'
-          value={this.state.password}
-          onChange={this.handleChange}/>
-        <button onClick={this.handleSubmit} className="btn btn-primary" style={{margin: 20, marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}} type='submit'>Submit</button>
-        </p>
+      <div style={{padding: 40}}>
+
+        <div className="col-md-2">
+          <button
+            style={{marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}}
+            className="btn btn-primary"
+            onClick={this.handleSubmit}>Register</button>
+        </div>
+
+        <div className="row">
+          <div className="col-md-4">
+            <div>
+              {this.state.signin
+                ? <SignInForm error={error} signIn={signIn} />
+                : <RegisterForm />}
+            </div>
+          </div>
+        </div>
+
       </div>
     )
   }

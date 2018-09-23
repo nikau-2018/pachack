@@ -1,10 +1,19 @@
 const express = require('express')
+const jwtVerify = require('express-jwt')
 
 const {createLunchbox, getLunchbox} = require('../db/lunchboxes')
 
 const router = express.Router()
 
+router.use(jwtVerify({secret: process.env.JWT_SECRET}))
 router.post('/', newLunchbox)
+
+// Error handler
+router.use((err, req, res, next) => {
+  if (err.name === 'UnauthorizedError') {
+    res.status(403).json({ok: false, message: 'Access denied.'})
+  }
+})
 
 function newLunchbox (req, res) {
   const {userId} = req.body
