@@ -77,7 +77,6 @@ export const createLunchbox = (userId) => {
   return (dispatch) => {
     // dispatch action
     dispatch(createLunchboxPending())
-
     // perform async request
     return request
     // post lunchbox
