@@ -7,7 +7,7 @@ import {
   CREATE_LUNCHBOX_ERROR
 } from '../actions'
 
-export default function loginState (state = false, action) {
+export function loginState (state = false, action) {
   switch (action.type) {
     case LOGIN_PENDING:
       return true
@@ -20,7 +20,7 @@ export default function loginState (state = false, action) {
   }
 }
 
-export default function lunchboxState (state = false, action) {
+export function lunchboxState (state = false, action) {
   switch (action.type) {
     case CREATE_LUNCHBOX_PENDING:
       return true
