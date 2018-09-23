@@ -1,4 +1,4 @@
-exports.up = knex => 
+exports.up = knex =>
   knex.schema.table('users', t => {
     t.integer('produce').references('foods.id')
     t.integer('grains').references('foods.id')
