@@ -1,6 +1,3 @@
-![1](./20180919_230402.jpg)
-![2](./20180919_230507.jpg)
-![3](./20180919_230540.jpg)
-![4](./20180919_230622.jpg)
-![5](./20180919_230636.jpg)
+# Lunch Bunch
 
+See [wiki](https://github.com/nikau-2018/lunchbunch/wiki) for details!
