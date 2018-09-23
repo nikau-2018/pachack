@@ -14,7 +14,6 @@ export const CREATE_LUNCHBOX_ERROR = 'CREATE_LUNCHBOX_ERROR'
 export const loginPending = () => {
   return {
     type: LOGIN_PENDING
-
   }
 }
 
@@ -47,11 +46,7 @@ export const loginUser = (username, password) => {
 
         dispatch(login(res.data.user))
       })
-      .catch(err => {
-        // eslint-disable-next-line no-console
-        console.log(err, 'nope')
-        dispatch(loginError())
-      })
+      .catch(err => dispatch(loginError()))
   }
 }
 
@@ -81,12 +76,8 @@ export const createLunchbox = (userId) => {
     // perform async request
     return request
     // post lunchbox
-      .post(`/api/v1/lunchboxes`, {userId})
-      .then(res => {
-        dispatch(createLunchboxAction(res.data.lunchbox))
-      })
-      .catch(() => {
-        dispatch(createLunchboxError())
-      })
+      .post(`/api/v1/lunchboxes`, {userId}, getHeaders())
+      .then(res => dispatch(createLunchboxAction(res.data.lunchbox)))
+      .catch(() => dispatch(createLunchboxError()))
   }
 }
