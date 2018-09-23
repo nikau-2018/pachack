@@ -3,4 +3,4 @@ exports.up = knex =>
     t.string('name').unique()
   })
 
-exports.down = knex => knex.schema.dropTable('users')
+exports.down = knex => knex.schema.dropUnique('name')
