@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "index.js",
   "author": "EDA",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "private": false,
   "dependencies": {
     "dotenv": "^6.0.0",
