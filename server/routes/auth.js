@@ -6,10 +6,10 @@ const {getToken} = require('../auth/token')
 
 const router = express.Router()
 
-router.post('/login', login)
+router.post('/signin', signIn)
 router.post('/register', register)
 
-function login (req, res) {
+function signIn (req, res) {
   const { username, password } = req.body
 
   return getUser(username)
@@ -34,14 +34,14 @@ function login (req, res) {
 
           const token = getToken(id)
 
-          return res.json({
+          return res.status(201).json({
             ok: true,
             user: { age, id, username },
             token
           })
         })
     })
-    .catch(() => res.json({
+    .catch(() => res.status(500).json({
       ok: false,
       error: 'An unknown error occurred.'
     }))
