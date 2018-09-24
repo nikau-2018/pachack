@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
 import './Lunchbox.css'
-// import {getFoods} from './actions'
+import {getFoods} from './actions'
 import Food from '../Food'
 
 export default class Lunchbox extends Component {
-  // componentDidMount () {
-  //   getFoods()
-  // }
+  componentDidMount () {
+    getFoods()
+  }
 
   render () {
     const {currentBox} = this.props
