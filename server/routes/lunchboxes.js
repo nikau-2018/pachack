@@ -5,9 +5,9 @@ const {createLunchbox, getLunchbox, storeFoodSelection} = require('../db/lunchbo
 
 const router = express.Router()
 
-// router.use(jwtVerify({secret: process.env.JWT_SECRET}))
+router.use(jwtVerify({secret: process.env.JWT_SECRET}))
 router.post('/', newLunchbox)
-router.put('/:foodId/:lunchbox', chooseFood)
+router.put('/:foodId/:lunchboxId', chooseFood)
 
 // Error handler
 router.use((err, req, res, next) => {
