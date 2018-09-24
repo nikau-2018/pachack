@@ -21,7 +21,6 @@ export default class ProfileScreen extends Component {
         <Redirect to='lunchboxScreen' />
       )
     }
-
     return (
       <div>
         <Header />
