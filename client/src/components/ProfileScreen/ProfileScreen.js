@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Redirect} from 'react-router-dom'
 
 import Header from '../Header'
 import Footer from '../Footer'
@@ -15,6 +16,11 @@ export default class ProfileScreen extends Component {
   }
 
   render () {
+    if (this.props.currentBox) {
+      return (
+        <Redirect to='lunchboxScreen' />
+      )
+    }
     return (
       <div>
         <Header />
