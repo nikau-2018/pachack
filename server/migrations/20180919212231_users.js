@@ -4,6 +4,7 @@ exports.up = knex =>
     t.string('username').unique()
     t.string('hash')
     t.integer('age')
+    t.timestamps(true, true)
   })
 
 exports.down = knex => knex.schema.dropTable('users')

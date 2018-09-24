@@ -3,6 +3,7 @@ exports.up = (knex, Promise) => {
     t.increments('id').primary()
     t.string('name')
     t.integer('category_id').references('categories.id')
+    t.timestamps(true, true)
   })
 }
 
