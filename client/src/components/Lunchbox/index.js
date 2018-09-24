@@ -1,7 +1,13 @@
 import { connect } from 'react-redux'
 import Lunchbox from './Lunchbox'
 
+import {getFoods} from './actions'
+
 const mapStateToProps = ({currentBox, foods}) => ({currentBox, foods})
 // const mapStateToProps = ({currentBox}) => ({currentBox})
 
-export default connect(mapStateToProps)(Lunchbox)
+const mapDispatchToProps = dispatch => ({
+  getFoods: () => dispatch(getFoods())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Lunchbox)
