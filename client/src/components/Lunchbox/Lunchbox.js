@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import './Lunchbox.css'
 // import {getFoods} from './actions'
-import Food from './index'
+import Food from '../Food'
 
 export default class Lunchbox extends Component {
   // componentDidMount () {
@@ -85,7 +85,7 @@ Lunchbox.defaultProps = {
       { id: 66614, name: 'egg', categoryId: 4 }
     ],
     other: [
-      { id: 66617, name: 'snack_balls', categoryId: 5 }
+      { id: 66617, name: 'snack balls', categoryId: 5 }
     ]
   }
 }
