@@ -24,7 +24,7 @@ export const getFoods = () => {
 
     return request
       .get(`/api/v1/foods`, getHeaders())
-      .then(res => dispatch(getFoodsList(res.data.foods)))
+      .then(res => dispatch(getFoodsList(res.data)))
       .catch(({response}) => dispatch(getFoodsError(response.data.error)))
   }
 }

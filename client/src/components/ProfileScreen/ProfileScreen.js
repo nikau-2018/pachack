@@ -16,11 +16,12 @@ export default class ProfileScreen extends Component {
   }
 
   render () {
-    if (this.props.currentBox) {
+    if (this.props.currentBox.lunchbox) {
       return (
-        <Redirect to='lunchboxScreen' />
+        <Redirect to='/lunchbox' />
       )
     }
+
     return (
       <div>
         <Header />
