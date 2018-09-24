@@ -1,7 +1,7 @@
 .container-fluid {
   padding: 10%;
   border-radius: 25px;
-  box-shadow: inset 10px 10px 5px;
+  box-shadow: inset 30px 30px 20px rgb(23, 49, 179);
 }
 
 .produce{
