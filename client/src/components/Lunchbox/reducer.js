@@ -1,35 +1,35 @@
 import {
-  CREATE_LUNCHBOX_PENDING,
-  CREATE_LUNCHBOX,
-  CREATE_LUNCHBOX_ERROR } from '../ProfileScreen/actions'
+  GET_FOODS_PENDING,
+  GET_FOODS,
+  GET_FOODS_ERROR } from './actions'
 
 const defaultState = {
-  lunchbox: null,
+  foods: null,
   error: null,
   pending: false
 }
 
-export default function (state = defaultState, {error, lunchbox, type}) {
+export default function (state = defaultState, {error, foods, type}) {
   switch (type) {
-    case CREATE_LUNCHBOX_PENDING:
+    case GET_FOODS_PENDING:
       return {
         ...state,
         error: null,
         pending: true
       }
 
-    case CREATE_LUNCHBOX:
+    case GET_FOODS:
       return {
         ...state,
-        lunchbox,
+        foods,
         error: null,
         pending: false
       }
 
-    case CREATE_LUNCHBOX_ERROR:
+    case GET_FOODS_ERROR:
       return {
         ...state,
-        lunchbox: null,
+        foods: null,
         error,
         pending: false
       }
