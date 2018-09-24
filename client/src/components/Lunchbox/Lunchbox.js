@@ -19,7 +19,7 @@ export default class Lunchbox extends Component {
         </div>
         <div className='lunchbox'>
           <div className='row'>
-            <div className='col-md-6 container-fluid produce' >
+            <div className='col-md-6 container-fluid-produce' >
               <div className='produce'>
                 <div className='producebutton'>
                   <button>Cucumber</button>
@@ -30,7 +30,7 @@ export default class Lunchbox extends Component {
               </div>
             </div>
 
-            <div className='col-md-6 container-fluid grains'>
+            <div className='col-md-6 container-fluid-grains'>
               <div className='grains'>
                 <div className='grainsbutton'>
                   <button>Wheat</button>
@@ -43,7 +43,7 @@ export default class Lunchbox extends Component {
           </div>
 
           <div className='row'>
-            <div className='col-md-4 container-fluid dairy'>
+            <div className='col-md-4 container-fluid-dairy'>
               <div className='dairy'>
                 <div className='dairybutton'>
                   <button>Milk</button>
@@ -54,7 +54,7 @@ export default class Lunchbox extends Component {
               </div>
             </div>
 
-            <div className='col-md-4 container-fluid protein'>
+            <div className='col-md-4 container-fluid-protein'>
               <div className='protein'>
                 <div className='proteinbutton'>
                   <button>Chicken</button>
@@ -65,7 +65,7 @@ export default class Lunchbox extends Component {
               </div>
             </div>
 
-            <div className='col-md-4 container-fluid other'>
+            <div className='col-md-4 container-fluid-other'>
               <div className='other'>
                 <div className='otherbutton'>
                   <button>Chocolate</button>
