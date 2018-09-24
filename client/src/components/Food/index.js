@@ -1,11 +1,10 @@
-import React from 'react'
+import { connect } from 'react-redux'
+import Food from './Food'
 
-const Food = (props) => (
-  <div className={props.category}>
-    <div className={`${props.category}button`}>
-      <button>{props.name}</button>
-    </div>
-  </div>
-)
+import {selectFood} from './actions'
 
-export default Food
+const mapDispatchToProps = dispatch => ({
+  selectFood: () => dispatch(selectFood())
+})
+
+export default connect(mapDispatchToProps)(Food)
