@@ -11,70 +11,73 @@ export default class Lunchbox extends Component {
 
   render () {
     const {currentBox} = this.props
-    const { produce, protein, dairy, grains, other } = this.props.foods
-
-    return (
-      <div className='lunchbox'>
-        <div className='row top'>
-          <div className='col-md-6 compartment'>
-            {produce.map((item) => {
-              return <Food
-                key={item.id}
-                category={'produce'}
-                name={item.name}
-                currentBox={currentBox}
-              />
-            })}
+    const { foods: { produce, protein, dairy, grains, other }, pending } = this.props.foods
+    if (pending) {
+      // <Loading />
+      return <div>Loading component goes here</div>
+    } else {
+      return (
+        <div className='lunchbox'>
+          <div className='row top'>
+            <div className='col-md-6 compartment'>
+              {produce.map((item) => {
+                return <Food
+                  key={item.id}
+                  category={'produce'}
+                  name={item.name}
+                  currentBox={currentBox}
+                />
+              })}
+            </div>
+            <div className='col-md-6 compartment'>
+              {grains.map((item) => {
+                return <Food
+                  key={item.id}
+                  category={'grains'}
+                  name={item.name}
+                  currentBox={currentBox}
+                />
+              })}
+            </div>
           </div>
-          <div className='col-md-6 compartment'>
-            {grains.map((item) => {
-              return <Food
-                key={item.id}
-                category={'grains'}
-                name={item.name}
-                currentBox={currentBox}
-              />
-            })}
+
+          <div className='row'>
+            <div className='col-md-4 compartment'>
+              {dairy.map((item) => {
+                return <Food
+                  key={item.id}
+                  category={'dairy'}
+                  name={item.name}
+                  currentBox={currentBox}
+                />
+              })}
+            </div>
+            <div className='col-md-4 compartment'>
+              {protein.map((item) => {
+                return <Food
+                  key={item.id}
+                  category={'protein'}
+                  name={item.name}
+                  currentBox={currentBox}
+                />
+              })}
+            </div>
+            <div className='col-md-4 compartment'>
+              {other.map((item) => {
+                return <Food
+                  key={item.id}
+                  category={'other'}
+                  name={item.name}
+                  currentBox={currentBox}
+                />
+              })}
+            </div>
           </div>
         </div>
-
-        <div className='row'>
-          <div className='col-md-4 compartment'>
-            {dairy.map((item) => {
-              return <Food
-                key={item.id}
-                category={'dairy'}
-                name={item.name}
-                currentBox={currentBox}
-              />
-            })}
-          </div>
-          <div className='col-md-4 compartment'>
-            {protein.map((item) => {
-              return <Food
-                key={item.id}
-                category={'protein'}
-                name={item.name}
-                currentBox={currentBox}
-              />
-            })}
-          </div>
-          <div className='col-md-4 compartment'>
-            {other.map((item) => {
-              return <Food
-                key={item.id}
-                category={'other'}
-                name={item.name}
-                currentBox={currentBox}
-              />
-            })}
-          </div>
-        </div>
-      </div>
-    )
+      )
+    }
   }
 }
-
 
 // Lunchbox.defaultProps = {
 //   foods: {
