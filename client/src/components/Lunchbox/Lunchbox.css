@@ -1,8 +1,30 @@
-.compartment {
-  border: solid 1px;
+.container-fluid {
   padding: 10%;
+  border-radius: 25px;
+  box-shadow: inset 10px 10px 5px;
 }
 
-.top {
-margin-top: 3%;
+.produce{
+  background-color: rgb(41, 89, 246);
+}
+
+.grains{
+  background-color: rgb(251, 48, 82);
+}
+
+.dairy {
+  background-color: rgb(247, 193, 46);
+}
+
+.protein {
+  background-color:  rgb(251, 48, 82);
+}
+
+.other {
+  background-color:  rgb(41, 89, 246);
+}
+
+h1 {
+  margin-top: 50px;
+  text-align: center;
 }
