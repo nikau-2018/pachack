@@ -1,3 +1,22 @@
 .error {
   color: red;
 }
+
+.container {
+  text-align: center;
+}
+
+h3 {
+  margin-left: 25%;
+  margin-right: 25%;
+width: 50%;
+border: #B6EAEB solid;
+padding: .5%;
+}
+
+.btn-primary {
+  background-color: #B6EAEB;
+  border: none;
+  color: black;
+  margin-top: 10%;
+}
