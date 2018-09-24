@@ -1,21 +1,17 @@
 import React, { Component } from 'react'
 
 import './Lunchbox.css'
-import {getFoods} from './actions'
+// import {getFoods} from './actions'
 import Food from './index'
 
 export default class Lunchbox extends Component {
-  componentDidMount () {
-    getFoods()
-  }
+  // componentDidMount () {
+  //   getFoods()
+  // }
 
   render () {
     const {currentBox} = this.props
-    const { produce } = this.props.foods
-    const { protein } = this.props.foods
-    const { dairy } = this.props.foods
-    const { grains } = this.props.foods
-    const { other } = this.props.foods
+    const { produce, protein, dairy, grains, other } = this.props.foods
 
     return (
       <div className='lunchbox'>
@@ -77,19 +73,19 @@ export default class Lunchbox extends Component {
 Lunchbox.defaultProps = {
   foods: {
     produce: [
-      { id: 66601, name: 'cucumber', categoryId: 1 } 
+      { id: 66601, name: 'cucumber', categoryId: 1 }
     ],
     grains: [
-      { id: 66618, name: 'almonds', categoryId: 2 } 
+      { id: 66618, name: 'almonds', categoryId: 2 }
     ],
     dairy: [
-      { id: 66610, name: 'yoghurt', categoryId: 3 } 
+      { id: 66610, name: 'yoghurt', categoryId: 3 }
     ],
     protein: [
-      { id: 66614, name: 'egg', categoryId: 4 } 
+      { id: 66614, name: 'egg', categoryId: 4 }
     ],
     other: [
-      { id: 66617, name: 'snack_balls', categoryId: 5 } 
+      { id: 66617, name: 'snack_balls', categoryId: 5 }
     ]
   }
 }
