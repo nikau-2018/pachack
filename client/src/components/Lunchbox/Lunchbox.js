@@ -73,3 +73,23 @@ export default class Lunchbox extends Component {
     )
   }
 }
+
+Lunchbox.defaultProps = {
+  foods: {
+    produce: [
+      { id: 66601, name: 'cucumber', categoryId: 1 } 
+    ],
+    grains: [
+      { id: 66618, name: 'almonds', categoryId: 2 } 
+    ],
+    dairy: [
+      { id: 66610, name: 'yoghurt', categoryId: 3 } 
+    ],
+    protein: [
+      { id: 66614, name: 'egg', categoryId: 4 } 
+    ],
+    other: [
+      { id: 66617, name: 'snack_balls', categoryId: 5 } 
+    ]
+  }
+}
