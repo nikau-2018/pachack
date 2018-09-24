@@ -26,7 +26,9 @@ export default class Lunchbox extends Component {
               key={item.id}
               className={'col-md-6 compartment'}
               category={'produce'}
-              name={item.name} />
+              name={item.name}
+              currentBox={currentBox}
+            />
           })}
 
           <div className='col-md-6 compartment' >
