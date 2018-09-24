@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import './Lunchbox.css'
 import {getFoods} from './actions'
+import Food from './index'
 
 export default class Lunchbox extends Component {
   componentDidMount () {
@@ -10,11 +11,24 @@ export default class Lunchbox extends Component {
 
   render () {
     const {currentBox} = this.props
+    const { produce } = this.props.foods
+    const { protein } = this.props.foods
+    const { dairy } = this.props.foods
+    const { grains } = this.props.foods
+    const { other } = this.props.foods
 
     return (
       <div className='lunchbox'>
 
         <div className='row top'>
+          {produce.map((item) => {
+            return <Food
+              key={item.id}
+              className={'col-md-6 compartment'}
+              category={'produce'}
+              name={item.name} />
+          })}
+
           <div className='col-md-6 compartment' >
             <div className='produce'>
               <div className='producebutton'>
