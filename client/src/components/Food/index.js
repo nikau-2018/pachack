@@ -10,8 +10,8 @@ export default class Food extends Component {
   clickHandler () {
     const foodId = this.props.foodId
     const lunchboxId = this.props.currentBox.lunchbox.id
-    console.log(foodId, lunchboxId)
-    this.props.selectFood(foodId, lunchboxId)
+    const categoryName = this.props.category
+    this.props.selectFood(foodId, lunchboxId, categoryName)
   }
 
   render () {
