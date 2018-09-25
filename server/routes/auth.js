@@ -13,11 +13,11 @@ router.get('/refreshuser', verifyJwt({secret: process.env.JWT_SECRET}), refreshU
 
 router.use((err, req, res, next) => {
   if (err.name === 'UnauthorizedError') {
-    res.status(403).json({ok: false, error: 'Access denied.'})
+    return res.status(403).json({ok: false, error: 'Access denied.'})
   }
 
   if (err) {
-    res.status(500).json({ok: false, error: 'Unknown error.'})
+    return res.status(500).json({ok: false, error: 'Unknown error.'})
   }
 
   next()
