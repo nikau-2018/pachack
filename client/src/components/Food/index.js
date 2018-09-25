@@ -1,10 +1,23 @@
-import { connect } from 'react-redux'
-import Food from './Food'
+import React, { Component } from 'react'
 
-import {selectFood} from './actions'
+export default class Food extends Component {
+  constructor (props) {
+    super(props)
 
-const mapDispatchToProps = dispatch => ({
-  selectFood: () => dispatch(selectFood())
-})
+    this.clickHandler = this.clickHandler.bind(this)
+  }
 
-export default connect(mapDispatchToProps)(Food)
+  clickHandler () {
+    this.props.selectFood(this.props.foodId)
+  }
+
+  render () {
+    return (
+      <div className={this.props.category}>
+        <div className={`${this.props.category}button`}>
+          <button onClick={this.clickHandler}>{this.props.name}</button>
+        </div>
+      </div>
+    )
+  }
+}
