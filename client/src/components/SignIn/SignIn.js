@@ -4,6 +4,8 @@ import {Redirect} from 'react-router-dom'
 import SignInForm from '../SignInForm'
 import RegisterForm from '../RegisterForm'
 
+import './SignIn.css'
+
 export default class SignIn extends Component {
   constructor (props) {
     super(props)
@@ -40,25 +42,12 @@ export default class SignIn extends Component {
     }
 
     return (
-      <div style={{padding: 40}}>
-
-        <div className="col-md-2">
-          <button
-            style={{marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}}
-            className="btn btn-primary"
-            onClick={this.handleSubmit}>Register</button>
+      <div style={{padding: 40}} className='container signIn'>
+        <div>
+          {this.state.signin
+            ? <SignInForm error={error} signIn={signIn} />
+            : <RegisterForm />}
         </div>
-
-        <div className="row">
-          <div className="col-md-4">
-            <div>
-              {this.state.signin
-                ? <SignInForm error={error} signIn={signIn} />
-                : <RegisterForm />}
-            </div>
-          </div>
-        </div>
-
       </div>
     )
   }
