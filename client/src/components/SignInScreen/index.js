@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Footer from '../Footer'
+// import Footer from '../Footer'
 import SignIn from '../SignIn'
 import logo from '../SignIn/logo.png'
 import apple from '../SignIn/apple.png'
