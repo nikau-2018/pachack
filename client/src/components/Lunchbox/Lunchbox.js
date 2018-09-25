@@ -30,9 +30,11 @@ export default class Lunchbox extends Component {
               {produce.map((item) => {
                 return <Food
                   key={item.id}
+                  foodId={item.id}
                   category={'produce'}
                   name={item.name}
                   currentBox={currentBox}
+                  selectFood={this.props.selectFood}
                 />
               })}
             </div>
@@ -40,9 +42,11 @@ export default class Lunchbox extends Component {
               {grains.map((item) => {
                 return <Food
                   key={item.id}
+                  foodId={item.id}
                   category={'grains'}
                   name={item.name}
                   currentBox={currentBox}
+                  selectFood={this.props.selectFood}
                 />
               })}
             </div>
@@ -53,9 +57,11 @@ export default class Lunchbox extends Component {
               {dairy.map((item) => {
                 return <Food
                   key={item.id}
+                  foodId={item.id}
                   category={'dairy'}
                   name={item.name}
                   currentBox={currentBox}
+                  selectFood={this.props.selectFood}
                 />
               })}
             </div>
@@ -63,9 +69,11 @@ export default class Lunchbox extends Component {
               {protein.map((item) => {
                 return <Food
                   key={item.id}
+                  foodId={item.id}
                   category={'protein'}
                   name={item.name}
                   currentBox={currentBox}
+                  selectFood={this.props.selectFood}
                 />
               })}
             </div>
@@ -73,9 +81,11 @@ export default class Lunchbox extends Component {
               {other.map((item) => {
                 return <Food
                   key={item.id}
+                  foodId={item.id}
                   category={'other'}
                   name={item.name}
                   currentBox={currentBox}
+                  selectFood={this.props.selectFood}
                 />
               })}
             </div>
@@ -85,34 +95,3 @@ export default class Lunchbox extends Component {
     )
   }
 }
-
-// Lunchbox.defaultProps = {
-//   foods: {
-//     produce: [
-//       { id: 66601, name: 'cucumber', categoryId: 1 },
-//       { id: 66602, name: 'cucumber', categoryId: 1 },
-//       { id: 66603, name: 'cucumber', categoryId: 1 }
-//     ],
-//     grains: [
-//       { id: 66618, name: 'muesli bar', categoryId: 2 },
-//       { id: 66619, name: 'muesli bar', categoryId: 2 },
-//       { id: 66620, name: 'muesli bar', categoryId: 2 }
-//     ],
-//     dairy: [
-//       { id: 66621, name: 'yoghurt', categoryId: 3 },
-//       { id: 66622, name: 'yoghurt', categoryId: 3 },
-//       { id: 66623, name: 'yoghurt', categoryId: 3 }
-
-//     ],
-//     protein: [
-//       { id: 66630, name: 'egg', categoryId: 4 },
-//       { id: 66631, name: 'egg', categoryId: 4 },
-//       { id: 66632, name: 'egg', categoryId: 4 }
-//     ],
-//     other: [
-//       { id: 66640, name: 'snack balls', categoryId: 5 },
-//       { id: 66641, name: 'snack balls', categoryId: 5 },
-//       { id: 66642, name: 'snack balls', categoryId: 5 }
-//     ]
-//   }
-// }
