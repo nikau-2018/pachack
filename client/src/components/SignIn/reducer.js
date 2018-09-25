@@ -6,6 +6,12 @@
 //  - import paths are simpler and less error-prone
 
 import {
+  REFRESH_USER_PENDING,
+  REFRESH_USER,
+  REFRESH_USER_ERROR,
+  REGISTER_PENDING,
+  REGISTER,
+  REGISTER_ERROR,
   SIGN_IN_PENDING,
   SIGN_IN,
   SIGN_IN_ERROR } from './actions'
@@ -20,6 +26,8 @@ const defaultState = {
 
 export default function (state = defaultState, {action, error, type, user}) {
   switch (type) {
+    case REFRESH_USER_PENDING:
+    case REGISTER_PENDING:
     case SIGN_IN_PENDING:
       // Keep the rest of our state, remove any previous error message, and change pending to `true`
       return {
@@ -28,6 +36,8 @@ export default function (state = defaultState, {action, error, type, user}) {
         pending: true
       }
 
+    case REFRESH_USER:
+    case REGISTER:
     case SIGN_IN:
       // Keep the rest of our state, change pending to false, save the user object returned from the
       // API, and clear previous error messages.
@@ -38,6 +48,14 @@ export default function (state = defaultState, {action, error, type, user}) {
         user
       }
 
+    case REFRESH_USER_ERROR:
+      return {
+        ...state,
+        error: null,
+        pending: false
+      }
+
+    case REGISTER_ERROR:
     case SIGN_IN_ERROR:
       // Keep the rest of our state (starting to notice a pattern here?), set the error message, and
       // set the user to null. Also cancel the pending status.
