@@ -2,7 +2,8 @@ const connection = require('./')
 
 module.exports = {
   createLunchbox,
-  getLunchbox
+  getLunchbox,
+  storeFoodSelection
 }
 
 function createLunchbox (userId, db = connection) {
@@ -13,4 +14,10 @@ function getLunchbox (id, db = connection) {
   return db('lunchboxes')
     .where('id', id)
     .first()
+}
+
+function storeFoodSelection (lunchboxId, data, db = connection) {
+  return db('lunchboxes')
+    .where('id', lunchboxId)
+    .update(data)
 }

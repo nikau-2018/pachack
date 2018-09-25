@@ -1,12 +1,13 @@
 const express = require('express')
 const jwtVerify = require('express-jwt')
 
-const {createLunchbox, getLunchbox} = require('../db/lunchboxes')
+const {createLunchbox, getLunchbox, storeFoodSelection} = require('../db/lunchboxes')
 
 const router = express.Router()
 
 router.use(jwtVerify({secret: process.env.JWT_SECRET}))
 router.post('/', newLunchbox)
+router.put('/:lunchboxId', chooseFood)
 
 // Error handler
 router.use((err, req, res, next) => {
@@ -29,6 +30,18 @@ function newLunchbox (req, res) {
       ok: true,
       lunchbox
     }))
+    .catch((err) => {
+      res.status(500).json({
+        ok: false,
+        message: err.message
+      })
+    })
+}
+
+function chooseFood (req, res) {
+  const lunchboxId = Number(req.params.lunchboxId)
+  storeFoodSelection(lunchboxId, req.body)
+    .then(res.status(200).json({ok: true, message: 'lunchbox updated.'}))
     .catch((err) => {
       res.status(500).json({
         ok: false,
