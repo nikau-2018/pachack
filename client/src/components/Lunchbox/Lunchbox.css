@@ -1,38 +1,54 @@
-.container-fluid-produce {
-  background: url(../Lunchbox/fruits-and-veggies.jpg);
+.produce1 {
+  background: url(../Lunchbox/yellow-lines.jpg);
   padding: 10%;
   border-radius: 25px;
-  // box-shadow: inset 30px 30px 20px rgb(82, 73, 26);
-  background-color: rgb(41, 89, 246);
+  margin:15px;
+  text-align: center;
 }
 
-.container-fluid-grains{
+.grains1 {
   background: url(../Lunchbox/stars.jpg);
   padding: 10%;
   border-radius: 25px;
+  margin:15px;
+  text-align: center;
 }
 
-.container-fluid-dairy {
+.dairy1 {
   background: url(../Lunchbox/pink-dots.png);
   padding: 10%;
   border-radius: 25px;
-  
+  margin:15px;
 }
 
-.container-fluid-protein {
-  background: url(../Lunchbox/fruits-and-veggies.jpg);
+.protein1 {
+  background: url(../Lunchbox/bubbles.jpg);
   padding: 10%;
   border-radius: 25px;
+  margin:15px;
 }
 
-.container-fluid-other {
-  background: url(../Lunchbox/pink-dots.png);
+.other1 {
+  background: url(../Lunchbox/yellow-lines.jpg);
   padding: 10%;
+  border-radius: 25px;
+  margin:15px;
+}
+.lunchbox{
+  background-color: rgb(129, 126, 126);
+  padding: 30px;
   border-radius: 25px;
 }
 
 h1 {
   margin-top: 50px;
-  margin-bottom: 25px;
+  margin-bottom: 50px;
   text-align: center;
+  font-family: 'Covered By Your Grace', cursive;
+  font-size: 80px;
+}
+
+.row {
+  flex-wrap:nowrap;
+  max-width: 94%;
 }
