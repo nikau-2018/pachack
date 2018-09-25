@@ -18,12 +18,12 @@ export const selectFoodError = error => ({
   error
 })
 
-export const selectFood = () => {
+export const selectFood = (foodId, lunchboxId) => {
   return dispatch => {
     dispatch(selectFoodPending())
 
     return request
-      .get(`/api/v1/lunchboxes/:foodId/:lunchboxId`, getHeaders())
+      .get(`/api/v1/lunchboxes/:${foodId}/:${lunchboxId}`, getHeaders())
       /* .then(res => ) */
       .catch(({response}) => dispatch(selectFoodError(response.data.error)))
   }
