@@ -3,6 +3,8 @@ import ProfileScreen from './ProfileScreen'
 
 import {createLunchbox} from './actions'
 
+
+
 const mapStateToProps = ({currentUser, currentBox}) => ({currentUser, currentBox})
 
 const mapDispatchToProps = dispatch => ({
