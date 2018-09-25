@@ -23,7 +23,7 @@ export const selectFood = (foodId, lunchboxId, categoryName) => {
     dispatch(selectFoodPending())
 
     return request
-      .put(`/api/v1/lunchboxes/${lunchboxId}`, {[categoryName]: [foodId]}, getHeaders())
+      .put(`/api/v1/lunchboxes/${lunchboxId}`, {[categoryName]: foodId}, getHeaders())
       /* .then(res => ) */
       .catch(({response}) => dispatch(selectFoodError(response.data.error)))
   }

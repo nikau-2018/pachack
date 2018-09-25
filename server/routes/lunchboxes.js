@@ -40,8 +40,7 @@ function newLunchbox (req, res) {
 
 function chooseFood (req, res) {
   const lunchboxId = Number(req.params.lunchboxId)
-  const {foodId, categoryName} = req.body
-  storeFoodSelection(lunchboxId, foodId, categoryName)
+  storeFoodSelection(lunchboxId, req.body)
     .then(res.status(200).json({ok: true, message: 'lunchbox updated.'}))
     .catch((err) => {
       res.status(500).json({
