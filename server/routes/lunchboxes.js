@@ -7,7 +7,7 @@ const router = express.Router()
 
 router.use(jwtVerify({secret: process.env.JWT_SECRET}))
 router.post('/', newLunchbox)
-router.put('/:foodId/:lunchboxId', chooseFood)
+router.put('/:lunchboxId', chooseFood)
 
 // Error handler
 router.use((err, req, res, next) => {
@@ -34,8 +34,7 @@ function newLunchbox (req, res) {
 
 function chooseFood (req, res) {
   const lunchboxId = Number(req.params.lunchboxId)
-  const foodId = Number(req.params.foodId)
-  storeFoodSelection(lunchboxId, foodId)
+  storeFoodSelection(lunchboxId)
     .then(res.status(200).json({ok: true, message: 'lunchbox updated.'}))
     .catch((err) => {
       res.status(500).json({
