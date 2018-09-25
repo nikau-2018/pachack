@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Food = (props) => (
-  <div className={props.category}>
-    <div className={`${props.category}button`}>
-      <button>{props.name}</button>
-    </div>
-  </div>
-)
+export default class Food extends Component {
+  constructor (props) {
+    super(props)
 
-export default Food
+    this.clickHandler = this.clickHandler.bind(this)
+  }
+
+  clickHandler () {
+    const foodId = this.props.foodId
+    const lunchboxId = this.props.currentBox.lunchbox.id
+    const categoryName = this.props.category
+    this.props.selectFood(foodId, lunchboxId, categoryName)
+  }
+
+  render () {
+    return (
+      <div className={this.props.category}>
+        <div className={`${this.props.category}button`}>
+          <button onClick={this.clickHandler}>{this.props.name}</button>
+        </div>
+      </div>
+    )
+  }
+}
