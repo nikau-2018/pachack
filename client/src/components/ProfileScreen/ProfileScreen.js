@@ -4,6 +4,9 @@ import {Redirect} from 'react-router-dom'
 import Header from '../Header'
 import Footer from '../Footer'
 
+import './ProfileScreen.css'
+import logo from '../SignIn/logo.png'
+
 export default class ProfileScreen extends Component {
   constructor (props) {
     super(props)
@@ -23,14 +26,13 @@ export default class ProfileScreen extends Component {
     }
 
     return (
-      <div>
-        <Header />
+      <div className='container-fluid bg'>
+        <img src= {logo}/>
         <div>
-          <h1>User&#39;s Lunch Bunch Homepage!</h1>
+          <h4>User&#39;s Lunch Bunch Homepage!</h4>
           <p>Welcome to your Lunch Bunch home. Let&#39;s build a lunchbox together.</p>
-          <button onClick={this.handleSubmit}>Build My Lunch</button>
+          <button className='but'onClick={this.handleSubmit}>Build My Lunch</button>
         </div>
-        <Footer />
       </div>
     )
   }

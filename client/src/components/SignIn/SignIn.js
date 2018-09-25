@@ -49,7 +49,7 @@ export default class SignIn extends Component {
     }
 
     return (
-      <div style={{padding: 40}} className='container signIn'>
+      <div className='container signIn'>
         <div>
           {this.state.showSignInForm
             ? <SignInForm error={error} signIn={signIn} />
