@@ -1,6 +1,6 @@
 import React, { Component} from 'react'
 
-export default class SignUp extends Component {
+export default class RegisterForm extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -8,7 +8,7 @@ export default class SignUp extends Component {
       password: ''
     }
     this.handleChange = this.handleChange.bind(this)
-    // this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange (e) {
@@ -17,13 +17,17 @@ export default class SignUp extends Component {
     })
   }
 
-  // handleSubmit (e) {
-  // }
+  handleSubmit () {
+    this.props.register(this.state.username, this.state.password)
+  }
 
   render () {
+    const {error} = this.props
+
     return (
       <div>
         <h3>Create User</h3>
+        {error && <p className='error'>{error}</p>}
         <p>Username: <input className='username form-control'
           type='text'
           name='username'
@@ -35,7 +39,11 @@ export default class SignUp extends Component {
           name='password'
           value={this.state.password}
           onChange={this.handleChange}/>
-        <button style={{marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}} className="btn btn-primary" type='submit'>Submit</button>
+        <button
+          onClick={this.handleSubmit}
+          style={{marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}}
+          className="btn btn-primary"
+          type='submit'>Submit</button>
         </p>
       </div>
     )
