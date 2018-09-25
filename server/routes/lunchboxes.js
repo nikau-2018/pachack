@@ -13,6 +13,12 @@ router.use((err, req, res, next) => {
   if (err.name === 'UnauthorizedError') {
     res.status(403).json({ok: false, message: 'Access denied.'})
   }
+
+  if (err) {
+    res.status(500).json({ok: false, error: 'Unknown error.'})
+  }
+
+  next()
 })
 
 function newLunchbox (req, res) {

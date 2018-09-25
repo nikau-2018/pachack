@@ -15,7 +15,12 @@ router.use((err, req, res, next) => {
   if (err.name === 'UnauthorizedError') {
     res.status(403).json({ok: false, error: 'Access denied.'})
   }
-  res.status(500).json({ok: false, error: 'Unknown error.'})
+
+  if (err) {
+    res.status(500).json({ok: false, error: 'Unknown error.'})
+  }
+
+  next()
 })
 
 function signIn (req, res) {
