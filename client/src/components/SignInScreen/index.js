@@ -8,7 +8,7 @@ import apple from '../SignIn/apple.png'
 export default class SignInScreen extends Component {
   render () {
     return (
-      <div className="bg">
+      <div className='container-fluid bg'>
         <div className="row signin">
 
           <div className="col-md-6">
