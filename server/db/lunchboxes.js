@@ -16,10 +16,8 @@ function getLunchbox (id, db = connection) {
     .first()
 }
 
-function storeFoodSelection (lunchboxId, foodId, categoryName, db = connection) {
+function storeFoodSelection (lunchboxId, data, db = connection) {
   return db('lunchboxes')
     .where('id', lunchboxId)
-    .update({
-      categoryName: foodId
-    })
+    .update(data)
 }
