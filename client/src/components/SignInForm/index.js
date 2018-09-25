@@ -27,26 +27,35 @@ export default class SignInForm extends Component {
     const {error} = this.props
 
     return (
-      <div>
+      <div className='container login'>
+
         <h3>Log In</h3>
         {error && <p className='error'>{error}</p>}
-        <p>Username: <input className='username form-control'
-          type='text'
-          name='username'
-          value={this.state.username}
-          onChange={this.handleChange}/>
-        </p>
-        <p>Password: <input className='password form-control'
-          type='text'
-          name='password'
-          value={this.state.password}
-          onChange={this.handleChange}/>
-        <button
-          onClick={this.handleSubmit}
-          className="btn btn-primary"
-          style={{margin: 20, marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}}
-          type='submit'>Submit</button>
-        </p>
+
+        <div className='row'>
+          <input className='username form-control'
+            type='text'
+            name='username'
+            placeholder='Enter your username'
+            value={this.state.username}
+            onChange={this.handleChange}/>
+        </div>
+
+        <div className='row'>
+          <input className='password form-control'
+            type='password'
+            name='password'
+            placeholder='Enter your password'
+            value={this.state.password}
+            onChange={this.handleChange}/>
+        </div>
+
+        <div className='row'>
+          <button
+            onClick={this.handleSubmit}
+            className="btn btn-primary"
+            type='submit'>Submit</button>
+        </div>
       </div>
     )
   }

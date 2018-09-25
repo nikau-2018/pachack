@@ -4,6 +4,8 @@ import {Redirect} from 'react-router-dom'
 import SignInForm from '../SignInForm'
 import RegisterForm from '../RegisterForm'
 
+import './SignIn.css'
+
 export default class SignIn extends Component {
   constructor (props) {
     super(props)
@@ -47,25 +49,18 @@ export default class SignIn extends Component {
     }
 
     return (
-      <div style={{padding: 40}}>
+      <div style={{padding: 40}} className='container signIn'>
+        <div>
+          {this.state.showSignInForm
+            ? <SignInForm error={error} signIn={signIn} />
+            : <RegisterForm error={error} register={register} />}
+        </div>
 
-        <div className="col-md-2">
+        <div className='row'>
           <button
-            style={{marginBottom: 50, background: '#B6EAEB', color: 'black', border: 'none'}}
             className="btn btn-primary"
             onClick={this.flipButton}>{showSignInForm ? 'Register' : 'Sign in'}</button>
         </div>
-
-        <div className="row">
-          <div className="col-md-4">
-            <div>
-              {this.state.showSignInForm
-                ? <SignInForm error={error} signIn={signIn} />
-                : <RegisterForm error={error} register={register} />}
-            </div>
-          </div>
-        </div>
-
       </div>
     )
   }
