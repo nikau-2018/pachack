@@ -56,12 +56,6 @@ export default class SignInForm extends Component {
             className="btn btn-primary"
             type='submit'>Submit</button>
         </div>
-
-        <div className='row'>
-          <button
-            className="btn btn-primary"
-            onClick={this.handleSubmit}>Register</button>
-        </div>
       </div>
     )
   }
