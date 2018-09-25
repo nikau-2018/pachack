@@ -2,53 +2,57 @@
   background: url(../Lunchbox/yellow-lines.jpg);
   padding: 10%;
   border-radius: 25px;
-  margin:15px;
-  text-align: center;
+  margin :15px;
 }
 
 .grains1 {
   background: url(../Lunchbox/stars.jpg);
   padding: 10%;
   border-radius: 25px;
-  margin:15px;
-  text-align: center;
+  margin :15px;
 }
 
 .dairy1 {
   background: url(../Lunchbox/pink-dots.png);
   padding: 10%;
   border-radius: 25px;
-  margin:15px;
+  margin :15px;
 }
 
 .protein1 {
   background: url(../Lunchbox/bubbles.jpg);
   padding: 10%;
   border-radius: 25px;
-  margin:15px;
+  margin :15px;
 }
 
 .other1 {
   background: url(../Lunchbox/yellow-lines.jpg);
   padding: 10%;
   border-radius: 25px;
-  margin:15px;
+  margin :15px;
 }
+
 .lunchbox{
-  background-color: rgb(129, 126, 126);
+  background-color: rgb(155, 152, 152);
   padding: 30px;
   border-radius: 25px;
 }
 
 h1 {
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   text-align: center;
   font-family: 'Covered By Your Grace', cursive;
   font-size: 80px;
+  color: white;
 }
 
 .row {
   flex-wrap:nowrap;
   max-width: 94%;
+} 
+
+.logo2 {
+  padding: 10px;
 }
