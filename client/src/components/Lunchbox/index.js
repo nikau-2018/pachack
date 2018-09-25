@@ -9,7 +9,9 @@ const mapStateToProps = ({currentBox, foods}) => ({currentBox, foods})
 
 const mapDispatchToProps = dispatch => ({
   getFoods: () => dispatch(getFoods()),
-  selectFood: () => dispatch(selectFood())
+  selectFood: (foodId, lunchboxId, categoryName) => {
+    dispatch(selectFood(foodId, lunchboxId, categoryName))
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Lunchbox)

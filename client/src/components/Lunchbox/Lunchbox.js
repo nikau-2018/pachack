@@ -37,6 +37,7 @@ export default class Lunchbox extends Component {
             {grains.map((item) => {
               return <Food
                 key={item.id}
+                foodId={item.id}
                 category={'grains'}
                 name={item.name}
                 currentBox={currentBox}
@@ -51,6 +52,7 @@ export default class Lunchbox extends Component {
             {dairy.map((item) => {
               return <Food
                 key={item.id}
+                foodId={item.id}
                 category={'dairy'}
                 name={item.name}
                 currentBox={currentBox}
@@ -62,6 +64,7 @@ export default class Lunchbox extends Component {
             {protein.map((item) => {
               return <Food
                 key={item.id}
+                foodId={item.id}
                 category={'protein'}
                 name={item.name}
                 currentBox={currentBox}
@@ -73,6 +76,7 @@ export default class Lunchbox extends Component {
             {other.map((item) => {
               return <Food
                 key={item.id}
+                foodId={item.id}
                 category={'other'}
                 name={item.name}
                 currentBox={currentBox}
