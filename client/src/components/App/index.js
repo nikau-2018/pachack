@@ -10,7 +10,7 @@ import SignInScreen from '../SignInScreen'
 export default class App extends Component {
   render () {
     return (
-      <div className="App">
+      <div className="App container">
         <Route exact path='/' component={SignInScreen} />
         <Route path='/lunchbox' component={LunchboxScreen} />
         <Route path='/profile' component={ProfileScreen} />

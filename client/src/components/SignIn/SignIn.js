@@ -49,17 +49,19 @@ export default class SignIn extends Component {
     }
 
     return (
-      <div className='container signIn'>
-        <div>
+      <div className='signIn row'>
+        <div className='col-12 form-group'>
           {this.state.showSignInForm
             ? <SignInForm error={error} signIn={signIn} />
             : <RegisterForm error={error} register={register} />}
         </div>
 
         <div className='row'>
-          <button
-            className="btn btn-primary"
-            onClick={this.flipButton}>{showSignInForm ? 'Register' : 'Sign in'}</button>
+          <div className='col-12 form-group'>
+            <button
+              className="btn btn-primary form-control"
+              onClick={this.flipButton}>{showSignInForm ? 'Register' : 'Sign in'}</button>
+          </div>
         </div>
       </div>
     )

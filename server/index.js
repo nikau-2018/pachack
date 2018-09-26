@@ -1,12 +1,29 @@
-require('dotenv').config()
-const server = require('./server')
+const express = require('express')
+const path = require('path')
 
-// Assume development mode (API hits over a proxy) unless PORT is set
-const port = process.env.PORT || 3001
+const users = require('./routes/users')
+const foods = require('./routes/foods')
+const authRoutes = require('./routes/auth')
+const lunchboxRoutes = require('./routes/lunchboxes')
 
-server.listen(port, () => {
-  const upMessage = process.env.NODE_ENV === 'production'
-    ? `Server listening on ${port} (and serving static files)`
-    : `Server accepting API requests proxied to http://localhost:${port}`
-  console.log(upMessage)
-})
+const server = express()
+
+if (process.env.NODE_ENV === 'production') {
+  server.use(express.static(path.join(__dirname, 'public')))
+}
+
+server.use(express.json())
+server.use('/api/v1/users', users)
+server.use('/api/v1/auth', authRoutes)
+server.use('/api/v1/lunchboxes', lunchboxRoutes)
+server.use('/api/v1/foods', foods)
+
+// In production, serve any request not covered by the above as the built index
+// from CRA's `yarn build` (for BrowserRouter)
+if (process.env.NODE_ENV === 'production') {
+  server.get('*', (req, res) => {
+    res.sendfile(path.join(__dirname, 'public/index.html'))
+  })
+}
+
+module.exports = server

@@ -89,11 +89,6 @@ function register (req, res) {
 
 function refreshUser (req, res, next) {
   const {id} = req.user
-  if (!id) {
-    const e = new Error()
-    e.name = 'UnauthorizedError'
-    return next(e)
-  }
 
   getUserById(id)
     .then(({id, username, age}) => {

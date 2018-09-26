@@ -27,7 +27,7 @@ export default class ProfileScreen extends Component {
 
     return (
       <div className='container-fluid bg'>
-        <img src= {logo}/>
+        <img src={logo} />
         <div>
           <h4>User&#39;s Lunch Bunch Homepage!</h4>
           <p>Welcome to your Lunch Bunch home. Let&#39;s build a lunchbox together.</p>
