@@ -1,11 +1,3 @@
-.bg {
-  background: url("../SignIn/chalkboard.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-}
-
 .login {
 padding:0;
 }

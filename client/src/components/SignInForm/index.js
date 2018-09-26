@@ -27,27 +27,26 @@ export default class SignInForm extends Component {
     const {error} = this.props
 
     return (
-      <div className='login'>
-
+      <div className='form-group'>
         <h3>Log In</h3>
         {error && <p className='error'>{error}</p>}
 
         <div className='row'>
-          <input className='col-12 username form-control'
+          <input className='col-12 form-control'
             type='text'
             name='username'
             placeholder='Enter your username'
             value={this.state.username}
-            onChange={this.handleChange}/>
+            onChange={this.handleChange} />
         </div>
 
         <div className='row'>
-          <input className='col-12 password form-control'
+          <input className='col-12 form-control'
             type='password'
             name='password'
             placeholder='Enter your password'
             value={this.state.password}
-            onChange={this.handleChange}/>
+            onChange={this.handleChange} />
         </div>
 
         <div className='row'>
