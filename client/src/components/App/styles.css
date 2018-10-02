@@ -1,7 +1,25 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
 .bg {
   background: url("./chalkboard.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  height: 100vh;
+}
+
+h1, h2, h3 {
+  font-family: 'Covered By Your Grace', cursive;
+  text-align: 'center';
+}
+
+p {
+  font-size: .8rem;
+  text-align: center;
 }

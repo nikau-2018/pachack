@@ -17,9 +17,7 @@ export default class SignInScreen extends Component {
 
         <div className='row'>
           <div className='col'>
-            <h4>Welcome to Lunch Bunch</h4>
-            <p>Create amazing lunches.</p>
-            <p>Sign In or Sign Up to get started.</p>
+            <p>Sign in or sign up to create amazing lunches!</p>
           </div>
         </div>
 
