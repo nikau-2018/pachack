@@ -1,0 +1,19 @@
+.profile h2, .profile h3 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.profile h3 {
+  margin-top: 20%;
+}
+
+.but {
+  background-color: #b6eaeb;
+  color: black;
+  text-transform: uppercase;
+}
+
+.profile {
+  padding-top: 5%;
+}

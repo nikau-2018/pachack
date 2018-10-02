@@ -8,7 +8,7 @@ import apple from './apple.png'
 export default class SignInScreen extends Component {
   render () {
     return (
-      <div>
+      <div className='signin'>
         <div className='row'>
           <div className='col text-center'>
             <img className='logo' src={logo} />
@@ -17,7 +17,7 @@ export default class SignInScreen extends Component {
 
         <div className='row'>
           <div className='col'>
-            <p>Sign in or sign up to create amazing lunches!</p>
+            <h2>Sign in or sign up to create amazing lunches!</h2>
           </div>
         </div>
 
