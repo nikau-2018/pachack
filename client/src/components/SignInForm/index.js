@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import './SignInForm.css'
+import './styles.css'
 
 export default class SignInForm extends Component {
   constructor (props) {
@@ -27,12 +27,14 @@ export default class SignInForm extends Component {
     const {error} = this.props
 
     return (
-      <div className='form-group'>
-        <h3>Log In</h3>
-        {error && <p className='error'>{error}</p>}
+      <form>
+        <div className='form-group'>
+          <h3>Log In</h3>
+          {error && <small className='warning'>{error}</small>}
+        </div>
 
-        <div className='row'>
-          <input className='col form-control'
+        <div className='form-group'>
+          <input className='form-control'
             type='text'
             name='username'
             placeholder='Enter your username'
@@ -40,8 +42,8 @@ export default class SignInForm extends Component {
             onChange={this.handleChange} />
         </div>
 
-        <div className='row'>
-          <input className='col form-control'
+        <div className='form-group'>
+          <input className='form-control'
             type='password'
             name='password'
             placeholder='Enter your password'
@@ -49,13 +51,13 @@ export default class SignInForm extends Component {
             onChange={this.handleChange} />
         </div>
 
-        <div className='row'>
+        <div className='form-group'>
           <button
             onClick={this.handleSubmit}
             className="btn btn-primary form-control"
             type='submit'>Submit</button>
         </div>
-      </div>
+      </form>
     )
   }
 }
