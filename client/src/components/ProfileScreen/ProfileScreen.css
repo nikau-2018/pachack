@@ -1,0 +1,44 @@
+.login {
+padding:0;
+}
+
+
+h4 {
+  font-size: 3em !important;
+  margin-top: 3%;
+  text-align: center;
+  font-family: 'Covered By Your Grace', cursive;
+  color: white
+}
+
+p {
+  font-size: 2em !important;
+  text-align: center;
+  color: white;
+  font-family: 'Covered By Your Grace', cursive;
+}
+
+
+* { 
+  outline: 1px #947676 solid !important; 
+  } 
+  
+   * { 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    -ms-box-sizing: border-box; 
+    box-sizing: border-box; 
+    }
+
+    .but {
+      height: 50px;
+      margin-left: 45%;
+      margin-top: 3%;
+      
+      background-color: #b6eaeb;
+      border : none;
+      color: black;
+      text-transform: uppercase;
+      }
+
+      

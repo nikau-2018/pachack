@@ -1,0 +1,20 @@
+.error {
+  color: red;
+}
+
+.btn-primary {
+width: 100%;
+margin: 2%;
+background-color: #b6eaeb;
+border : none;
+color: black;
+text-transform: uppercase;
+}
+
+.btn-primary:hover {
+  background: #89d3d4;
+}
+
+.form-control {
+margin: 3% 0;
+}

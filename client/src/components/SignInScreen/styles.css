@@ -1,0 +1,39 @@
+.apple {
+  height: 70px;
+}
+
+.form {
+  background: white;
+  box-shadow: 10px 10px 10px black;
+  padding: 8em 10em;
+  margin: auto;
+}
+
+.form-container {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+h4 {
+  font-size: 2rem;
+  margin-top: 7%;
+  text-align: center;
+  font-family: 'Covered By Your Grace', cursive;
+}
+
+p {
+  font-size: .8rem;
+  text-align: center;
+}
+
+* { 
+  outline: 1px #947676 !important; 
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  -ms-box-sizing: border-box; 
+  box-sizing: border-box; 
+} 

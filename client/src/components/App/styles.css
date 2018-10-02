@@ -1,4 +1,7 @@
-.main {
-  color: green;
-  font-weight: bold;
+.bg {
+  background: url("./chalkboard.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
