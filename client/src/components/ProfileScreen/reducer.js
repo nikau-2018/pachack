@@ -2,6 +2,7 @@ import {
   CREATE_LUNCHBOX_PENDING,
   CREATE_LUNCHBOX,
   CREATE_LUNCHBOX_ERROR } from '../ProfileScreen/actions'
+import { SELECT_FOOD } from '../Food/actions'
 
 const defaultState = {
   lunchbox: null,
@@ -9,7 +10,7 @@ const defaultState = {
   pending: false
 }
 
-export default function (state = defaultState, {error, lunchbox, type}) {
+export default function (state = defaultState, {error, foodItem, lunchbox, type}) {
   switch (type) {
     case CREATE_LUNCHBOX_PENDING:
       return {
@@ -32,6 +33,15 @@ export default function (state = defaultState, {error, lunchbox, type}) {
         lunchbox: null,
         error,
         pending: false
+      }
+
+    case SELECT_FOOD:
+      return {
+        ...state,
+        lunchbox: {
+          ...state.lunchbox,
+          [foodItem.categoryName]: foodItem.id
+        }
       }
 
     default:
