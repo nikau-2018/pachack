@@ -8,8 +8,17 @@ export default class Lunchbox extends Component {
     this.props.getFoods()
   }
 
+  renderFood = food => <Food
+    key={food.id}
+    foodId={food.id}
+    category={food.categoryName}
+    name={food.name}
+    currentBox={this.props.currentBox}
+    selectFood={this.props.selectFood}
+  />
+
   render () {
-    const { currentBox, foods } = this.props
+    const { currentBox, foods, lunchbox } = this.props
 
     if (!foods.foods) {
       return <div>Loading component goes here</div>
@@ -25,67 +34,32 @@ export default class Lunchbox extends Component {
       <div className='lunchbox'>
         <div className='row'>
           <div className='col compartment produce'>
-            {produce.map((item) => {
-              return <Food
-                key={item.id}
-                foodId={item.id}
-                category='produce'
-                name={item.name}
-                currentBox={currentBox}
-                selectFood={this.props.selectFood}
-              />
-            })}
+            {lunchbox && lunchbox.produce
+              ? this.renderFood(lunchbox.produce)
+              : produce.map(this.renderFood)}
           </div>
           <div className='col compartment grains'>
-            {grains.map((item) => {
-              return <Food
-                key={item.id}
-                foodId={item.id}
-                category='grains'
-                name={item.name}
-                currentBox={currentBox}
-                selectFood={this.props.selectFood}
-              />
-            })}
+            {lunchbox && lunchbox.grains
+              ? this.renderFood(lunchbox.grains)
+              : grains.map(this.renderFood)}
           </div>
         </div>
 
         <div className='row'>
           <div className='col compartment dairy'>
-            {dairy.map((item) => {
-              return <Food
-                key={item.id}
-                foodId={item.id}
-                category='dairy'
-                name={item.name}
-                currentBox={currentBox}
-                selectFood={this.props.selectFood}
-              />
-            })}
+            {lunchbox && lunchbox.dairy
+              ? this.renderFood(lunchbox.dairy)
+              : dairy.map(this.renderFood)}
           </div>
           <div className='col compartment protein'>
-            {protein.map((item) => {
-              return <Food
-                key={item.id}
-                foodId={item.id}
-                category='protein'
-                name={item.name}
-                currentBox={currentBox}
-                selectFood={this.props.selectFood}
-              />
-            })}
+            {lunchbox && lunchbox.protein
+              ? this.renderFood(lunchbox.protein)
+              : protein.map(this.renderFood)}
           </div>
           <div className='col compartment other'>
-            {other.map((item) => {
-              return <Food
-                key={item.id}
-                foodId={item.id}
-                category='other'
-                name={item.name}
-                currentBox={currentBox}
-                selectFood={this.props.selectFood}
-              />
-            })}
+            {lunchbox && lunchbox.other
+              ? this.renderFood(lunchbox.other)
+              : other.map(this.renderFood)}
           </div>
         </div>
       </div>
