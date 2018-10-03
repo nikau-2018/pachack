@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import './Lunchbox.css'
+import './styles.css'
 import Food from '../Food'
 
 export default class Lunchbox extends Component {
@@ -12,33 +12,36 @@ export default class Lunchbox extends Component {
     const { currentBox, foods } = this.props
 
     if (!foods.foods) {
-      // <Loading />
       return <div>Loading component goes here</div>
     }
 
     const { foods: { produce, protein, dairy, grains, other }, pending } = foods
 
+    if (pending) {
+      return <div>Loading...</div>
+    }
+
     return (
       <div className='lunchbox'>
-        <div className='row top'>
-          <div className='col-md-6 compartment'>
+        <div className='row'>
+          <div className='col compartment produce'>
             {produce.map((item) => {
               return <Food
                 key={item.id}
                 foodId={item.id}
-                category={'produce'}
+                category='produce'
                 name={item.name}
                 currentBox={currentBox}
                 selectFood={this.props.selectFood}
               />
             })}
           </div>
-          <div className='col-md-6 compartment'>
+          <div className='col compartment grains'>
             {grains.map((item) => {
               return <Food
                 key={item.id}
                 foodId={item.id}
-                category={'grains'}
+                category='grains'
                 name={item.name}
                 currentBox={currentBox}
                 selectFood={this.props.selectFood}
@@ -48,36 +51,36 @@ export default class Lunchbox extends Component {
         </div>
 
         <div className='row'>
-          <div className='col-md-4 compartment'>
+          <div className='col compartment dairy'>
             {dairy.map((item) => {
               return <Food
                 key={item.id}
                 foodId={item.id}
-                category={'dairy'}
+                category='dairy'
                 name={item.name}
                 currentBox={currentBox}
                 selectFood={this.props.selectFood}
               />
             })}
           </div>
-          <div className='col-md-4 compartment'>
+          <div className='col compartment protein'>
             {protein.map((item) => {
               return <Food
                 key={item.id}
                 foodId={item.id}
-                category={'protein'}
+                category='protein'
                 name={item.name}
                 currentBox={currentBox}
                 selectFood={this.props.selectFood}
               />
             })}
           </div>
-          <div className='col-md-4 compartment'>
+          <div className='col compartment other'>
             {other.map((item) => {
               return <Food
                 key={item.id}
                 foodId={item.id}
-                category={'other'}
+                category='other'
                 name={item.name}
                 currentBox={currentBox}
                 selectFood={this.props.selectFood}

@@ -1,0 +1,29 @@
+.compartment {
+  border: solid 1px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.produce {
+  background: center / cover no-repeat url("./yellow-lines.jpg");
+}
+
+.grains {
+  background: center / cover no-repeat url("./stars.jpg");
+}
+
+.dairy {
+  background: center / cover no-repeat url("./pink-dots.png");
+}
+
+.protein {
+  background: center / cover no-repeat url("./bubbles.jpg");
+}
+
+.other {
+  background: center / cover no-repeat url("./yellow-lines.jpg");
+}
+
+.lunchbox {
+  background: transparent;
+}

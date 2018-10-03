@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 
-import Header from '../Header'
 import Lunchbox from '../Lunchbox'
+import './styles.css'
 
 export default class LunchboxScreen extends Component {
   render () {
     return (
-      <div className='container'>
-        <Header />
+      <div className='landscape'>
         <Lunchbox />
       </div>
     )

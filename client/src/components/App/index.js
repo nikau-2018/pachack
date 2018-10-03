@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 
-import './bootstrap.min.css'
 import './styles.css'
 import LunchboxScreen from '../LunchboxScreen'
 import ProfileScreen from '../ProfileScreen'
