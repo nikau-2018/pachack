@@ -1,11 +1,13 @@
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .landscape {
     transform: rotate(-90deg);
-    transform-origin: right top;
+    transform-origin: left top;
     overflow-x: hidden;
     overflow-y: hidden;
-    height: 100vh;
     width: 100vh;
+    position: absolute;
+    top: 100%;
+    left: 0;
   }
 }
 
