@@ -10,6 +10,7 @@ import reducers from './reducers'
 import registerServiceWorker from './registerServiceWorker'
 
 import './bootstrap.min.css'
+import './covered-by-your-grace.css'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducers, composeEnhancers(
