@@ -24,15 +24,8 @@
   },
   "scripts": {
     "build": "cd client && yarn build",
-    "client": "cd client && yarn start",
     "copy": "rm -rf ./public && mkdir public && cp -r client/build/* ./public",
-    "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server:dev\"",
-    "install:client": "cd client && yarn",
-    "message": "echo \"\n\n  ===== PRODUCTION only. (Did you mean yarn dev?) =====\n\n\"",
-    "preinstall": "yarn install:client",
-    "postinstall": "knex migrate:latest && knex seed:run",
-    "server:dev": "nodemon index",
-    "server:prod": "node index",
-    "start": "yarn --silent message && yarn server:prod"
+    "postinstall": "knex migrate:latest",
+    "start": "node index"
   }
 }
