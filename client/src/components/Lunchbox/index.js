@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 import Lunchbox from './Lunchbox'
 
-import {getFoods} from './actions'
-import {selectFoodRequest} from '../Food/actions'
+import { getFoods } from './actions'
+import { selectFoodRequest } from '../Food/actions'
 
 const mapStateToProps = ({ currentBox, foods }) => {
   // Populated lunchbox for use in food display (doesn't supercede currentBox)
   let lunchbox = null
-  if (foods.foods) {
+  if (foods.foods && currentBox.lunchbox) {
     lunchbox = {
       produce: foods.foods.produce.find(f => f.id === currentBox.lunchbox.produce),
       protein: foods.foods.protein.find(f => f.id === currentBox.lunchbox.protein),

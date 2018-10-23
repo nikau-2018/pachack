@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import './styles.css'
 
@@ -15,6 +15,12 @@ export default class ProfileScreen extends Component {
   }
 
   render () {
+    if (!this.props.currentUser.user) {
+      return (
+        <Redirect to='/' />
+      )
+    }
+
     if (this.props.currentBox.lunchbox) {
       return (
         <Redirect to='/lunchbox' />

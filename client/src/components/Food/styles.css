@@ -1,0 +1,7 @@
+.food {
+  border: 2px solid white !important;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  margin: 0 5px;
+}

@@ -3,6 +3,10 @@
   border-radius: 25px;
   text-align: center;
   height: 150px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .produce {

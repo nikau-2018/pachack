@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 
 import './styles.css'
 import Food from '../Food'
@@ -20,8 +21,8 @@ export default class Lunchbox extends Component {
   render () {
     const { currentBox, foods, lunchbox } = this.props
 
-    if (!foods.foods) {
-      return <div>Loading component goes here</div>
+    if (!currentBox.lunchbox) {
+      return <Redirect to='/profile' />
     }
 
     const { foods: { produce, protein, dairy, grains, other }, pending } = foods
