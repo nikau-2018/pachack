@@ -27,5 +27,8 @@
     "copy": "rm -rf ./public && mkdir public && cp -r client/build/* ./public",
     "postinstall": "knex migrate:latest",
     "start": "node index"
+  },
+  "engines": {
+    "node": ">= 10.0"
   }
 }
