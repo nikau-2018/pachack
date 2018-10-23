@@ -6,7 +6,6 @@
   "author": "EDA",
   "license": "Apache-2.0",
   "private": false,
-  "main": "index.js",
   "repository": "git@github.com:richchurcher/pachack-scaffold",
   "dependencies": {
     "dotenv": "^6.0.0",
@@ -15,6 +14,7 @@
     "jsonwebtoken": "^8.3.0",
     "knex": "^0.15.2",
     "libsodium-wrappers": "^0.7.3",
+    "pg": "^7.5.0",
     "sqlite3": "^4.0.2"
   },
   "devDependencies": {
@@ -30,6 +30,7 @@
     "install:client": "cd client && yarn",
     "message": "echo \"\n\n  ===== PRODUCTION only. (Did you mean yarn dev?) =====\n\n\"",
     "preinstall": "yarn install:client",
+    "postinstall": "knex migrate:latest && knex seed:run",
     "server:dev": "nodemon index",
     "server:prod": "node index",
     "start": "yarn --silent message && yarn server:prod"
