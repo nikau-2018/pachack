@@ -1,7 +1,7 @@
 {
   "name": "lunchbunch",
   "description": "Lunch Bunch",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "index.js",
   "author": "EDA",
   "license": "Apache-2.0",
