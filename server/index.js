@@ -24,7 +24,7 @@ module.exports = server
 // from CRA's `yarn build` (for BrowserRouter)
 if (process.env.NODE_ENV === 'production') {
   server.get('*', (req, res) => {
-    res.sendfile(path.join(__dirname, '..', 'public/index.html'))
+    res.sendFile(path.join(__dirname, '..', 'public/index.html'))
   })
 }
 
