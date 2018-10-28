@@ -9,7 +9,8 @@ export default class ProfileScreen extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleSubmit () {
+  handleSubmit (evt) {
+    evt.preventDefault()
     const { user } = this.props.currentUser
     this.props.createLunchbox(user.id)
   }
