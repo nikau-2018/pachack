@@ -6,7 +6,10 @@
   "author": "EDA",
   "license": "Apache-2.0",
   "private": false,
-  "repository": "git@github.com:richchurcher/pachack-scaffold",
+  "repository": "git@github.com:kowhai-2018/lunchbunch",
+  "engines": {
+    "node": ">= 10.0"
+  },
   "dependencies": {
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
@@ -26,13 +29,15 @@
     "build": "cd client && yarn build",
     "client": "cd client && yarn start",
     "copy": "rm -rf ./public && mkdir public && cp -r client/build/* ./public",
+    "deploy": "yarn build && yarn copy && git push heroku master",
     "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server:dev\"",
     "install:client": "cd client && yarn",
     "message": "echo \"\n\n  ===== PRODUCTION only. (Did you mean yarn dev?) =====\n\n\"",
-    "preinstall": "yarn install:client",
+    "prepare": "yarn install:client",
     "postinstall": "knex migrate:latest && knex seed:run",
     "server:dev": "nodemon index",
     "server:prod": "node index",
     "start": "yarn --silent message && yarn server:prod"
   }
 }
+
