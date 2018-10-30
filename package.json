@@ -29,15 +29,14 @@
     "build": "cd client && yarn build",
     "client": "cd client && yarn start",
     "copy": "rm -rf ./public && mkdir public && cp -r client/build/* ./public",
-    "deploy": "yarn build && yarn copy && git push heroku master",
+    "deploy": "git checkout -b deploy && yarn build && yarn copy && git add -A && git commit -m 'BUILD' && git push heroku deploy:master && git checkout -",
     "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server:dev\"",
     "install:client": "cd client && yarn",
     "message": "echo \"\n\n  ===== PRODUCTION only. (Did you mean yarn dev?) =====\n\n\"",
-    "prepare": "[ \"$NODE_ENV\" != production ] && yarn install:client",
+    "prepare": "[[ -z \"${npm_config_production}\" ]] && exit 0; yarn install:client",
     "postinstall": "knex migrate:latest",
     "server:dev": "nodemon --inspect index",
     "server:prod": "node index",
     "start": "yarn --silent message && yarn server:prod"
   }
 }
-
