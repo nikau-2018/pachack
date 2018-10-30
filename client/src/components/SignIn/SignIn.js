@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Redirect} from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import SignInForm from '../SignInForm'
 import RegisterForm from '../RegisterForm'
@@ -18,7 +18,8 @@ export default class SignIn extends Component {
   }
 
   flipButton (e) {
-    const {showSignInForm} = this.state
+    e.preventDefault()
+    const { showSignInForm } = this.state
 
     this.setState({
       showSignInForm: !showSignInForm
@@ -59,7 +60,7 @@ export default class SignIn extends Component {
         <div className='row'>
           <div className='col'>
             <button
-              className="btn btn-primary form-control"
+              className='btn btn-primary form-control'
               onClick={this.flipButton}>{showSignInForm ? 'Register' : 'Sign in'}</button>
           </div>
         </div>

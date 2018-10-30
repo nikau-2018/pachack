@@ -19,17 +19,17 @@ export default class Lunchbox extends Component {
   />
 
   render () {
-    const { currentBox, foods, lunchbox } = this.props
+    const { currentBox, foods, lunchbox, pending } = this.props
 
     if (!currentBox.lunchbox) {
       return <Redirect to='/profile' />
     }
 
-    const { foods: { produce, protein, dairy, grains, other }, pending } = foods
-
-    if (pending) {
+    if (pending || !lunchbox) {
       return <div>Loading...</div>
     }
+
+    const { foods: { produce, protein, dairy, grains, other } } = foods
 
     return (
       <div className='lunchbox'>

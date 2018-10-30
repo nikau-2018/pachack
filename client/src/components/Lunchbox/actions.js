@@ -1,12 +1,12 @@
 import request from 'axios'
 
-import {getHeaders} from '../../utils/api'
+import { getHeaders } from '../../utils/api'
 
 export const GET_FOODS_PENDING = 'GET_FOODS_PENDING'
 export const GET_FOODS = 'GET_FOODS'
 export const GET_FOODS_ERROR = 'GET_FOODS_ERROR'
 
-export const getFoodsPending = () => ({type: GET_FOODS_PENDING})
+export const getFoodsPending = () => ({ type: GET_FOODS_PENDING })
 
 export const getFoodsList = foods => ({
   type: GET_FOODS,
@@ -25,6 +25,6 @@ export const getFoods = () => {
     return request
       .get(`/api/v1/foods`, getHeaders())
       .then(res => dispatch(getFoodsList(res.data)))
-      .catch(({response}) => dispatch(getFoodsError(response.data.error)))
+      .catch(({ response }) => dispatch(getFoodsError(response.data.error)))
   }
 }

@@ -7,6 +7,7 @@ import { selectFoodRequest } from '../Food/actions'
 const mapStateToProps = ({ currentBox, foods }) => {
   // Populated lunchbox for use in food display (doesn't supercede currentBox)
   let lunchbox = null
+  let pending = currentBox.pending || foods.pending
   if (foods.foods && currentBox.lunchbox) {
     lunchbox = {
       produce: foods.foods.produce.find(f => f.id === currentBox.lunchbox.produce),
@@ -20,7 +21,8 @@ const mapStateToProps = ({ currentBox, foods }) => {
   return {
     currentBox,
     foods,
-    lunchbox
+    lunchbox,
+    pending
   }
 }
 

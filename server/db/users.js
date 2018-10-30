@@ -1,6 +1,6 @@
 const connection = require('./')
 
-const {generateHash} = require('../auth/hash')
+const { generateHash } = require('../auth/hash')
 
 module.exports = {
   getUser,
@@ -16,11 +16,11 @@ function getUser (username, db = connection) {
 
 function getUserById (id, db = connection) {
   return db('users')
-    .where({id})
+    .where({ id })
     .first()
 }
 
-function createUser ({username, password, age}, db = connection) {
+function createUser ({ username, password, age }, db = connection) {
   return generateHash(password)
-    .then(hash => db('users').insert({username, hash, age}))
+    .then(hash => db('users').insert({ username, hash, age }))
 }
