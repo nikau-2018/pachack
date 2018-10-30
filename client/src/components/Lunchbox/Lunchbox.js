@@ -25,7 +25,7 @@ export default class Lunchbox extends Component {
       return <Redirect to='/profile' />
     }
 
-    if (pending) {
+    if (pending || !lunchbox) {
       return <div>Loading...</div>
     }
 

@@ -1,13 +1,13 @@
 const express = require('express')
 
 const router = express.Router()
-const {getFoods} = require('../db/foods')
+const { getFoods } = require('../db/foods')
 
-router.get('/', displayFoods)
+router.get('/', refreshFoods)
 
-function displayFoods (req, res) {
+function refreshFoods (req, res) {
   getFoods()
-    .then((foods) => res.status(200).json({
+    .then(foods => res.status(200).json({
       ok: true,
       produce: foods.filter(food => food.categoryName === 'produce'),
       protein: foods.filter(food => food.categoryName === 'protein'),

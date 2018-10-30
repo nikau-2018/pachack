@@ -30,10 +30,10 @@ function getOrCreateLunchbox (req, res) {
       if (lunchbox) {
         return res.status(200).json({ ok: true, lunchbox })
       }
-      return createLunchbox(userId)
+      createLunchbox(userId)
+        .then(([ id ]) => getLunchbox(id))
+        .then(lunchbox => res.status(201).json({ ok: true, lunchbox }))
     })
-    .then(([ id ]) => getLunchbox(id))
-    .then(lunchbox => res.status(201).json({ ok: true, lunchbox }))
     .catch(err => {
       res.status(500).json({
         ok: false,
