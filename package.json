@@ -33,7 +33,7 @@
     "dev": "concurrently --kill-others-on-fail \"yarn client\" \"yarn server:dev\"",
     "install:client": "cd client && yarn",
     "message": "echo \"\n\n  ===== PRODUCTION only. (Did you mean yarn dev?) =====\n\n\"",
-    "prepare": "[[ -z \"${npm_config_production}\" ]] && exit 0; yarn install:client",
+    "prepare": "[ -z \"${npm_config_production}\" ] && exit 0; yarn install:client",
     "postinstall": "knex migrate:latest",
     "server:dev": "nodemon --inspect index",
     "server:prod": "node index",
