@@ -9,7 +9,7 @@ const defaultState = {
   pending: false
 }
 
-export default function (state = defaultState, {error, foods, type}) {
+export default function (state = defaultState, { error, foods, type }) {
   switch (type) {
     case GET_FOODS_PENDING:
       return {

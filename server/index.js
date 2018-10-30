@@ -19,7 +19,6 @@ server.use('/api/v1/foods', foods)
 server.use('/api/v1/lunchboxes', lunchboxes)
 server.use('/api/v1/users', users)
 
-module.exports = server
 // In production, serve any request not covered by the above as the built index
 // from CRA's `yarn build` (for BrowserRouter)
 if (process.env.NODE_ENV === 'production') {
