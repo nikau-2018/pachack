@@ -17,13 +17,13 @@
     "jsonwebtoken": "^8.3.0",
     "knex": "^0.15.2",
     "libsodium-wrappers": "^0.7.3",
-    "pg": "^7.5.0",
-    "sqlite3": "^4.0.2"
+    "pg": "^7.5.0"
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
     "jest": "^23.6.0",
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.4",
+    "sqlite3": "^4.0.4"
   },
   "scripts": {
     "build": "cd client && yarn build",
