@@ -5,6 +5,7 @@ import { getHeaders } from '../../utils/api'
 export const GET_FOODS_PENDING = 'GET_FOODS_PENDING'
 export const GET_FOODS = 'GET_FOODS'
 export const GET_FOODS_ERROR = 'GET_FOODS_ERROR'
+export const RESET_CURRENT_BOX = 'RESET_CURRENT_BOX'
 
 export const getFoodsPending = () => ({ type: GET_FOODS_PENDING })
 
@@ -28,3 +29,5 @@ export const getFoods = () => {
       .catch(({ response }) => dispatch(getFoodsError(response.data.error)))
   }
 }
+
+export const resetCurrentBox = () => ({ type: RESET_CURRENT_BOX })

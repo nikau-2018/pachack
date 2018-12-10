@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import Lunchbox from './Lunchbox'
 
-import { getFoods } from './actions'
+import { getFoods, resetCurrentBox } from './actions'
 import { selectFoodRequest } from '../Food/actions'
 
 const mapStateToProps = ({ currentBox, foods }) => {
@@ -28,9 +28,8 @@ const mapStateToProps = ({ currentBox, foods }) => {
 
 const mapDispatchToProps = dispatch => ({
   getFoods: () => dispatch(getFoods()),
-  selectFood: (foodId, lunchboxId, categoryName) => {
-    dispatch(selectFoodRequest(foodId, lunchboxId, categoryName))
-  }
+  selectFood: (foodId, lunchboxId, categoryName) => dispatch(selectFoodRequest(foodId, lunchboxId, categoryName)),
+  resetCurrentBox: () => dispatch(resetCurrentBox())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Lunchbox)

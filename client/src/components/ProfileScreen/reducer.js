@@ -3,6 +3,7 @@ import {
   CREATE_LUNCHBOX,
   CREATE_LUNCHBOX_ERROR } from '../ProfileScreen/actions'
 import { SELECT_FOOD } from '../Food/actions'
+import { RESET_CURRENT_BOX } from '../Lunchbox/actions'
 
 const defaultState = {
   lunchbox: null,
@@ -43,6 +44,9 @@ export default function (state = defaultState, {error, foodItem, lunchbox, type}
           [foodItem.categoryName]: foodItem.id
         }
       }
+
+    case RESET_CURRENT_BOX:
+      return defaultState;
 
     default:
       return state

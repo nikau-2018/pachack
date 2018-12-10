@@ -6,13 +6,16 @@ import './styles.css'
 export default class ProfileScreen extends Component {
   constructor (props) {
     super(props)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.build = this.build.bind(this)
+    this.reset = this.reset.bind(this)
   }
 
-  handleSubmit (evt) {
-    evt.preventDefault()
-    const { user } = this.props.currentUser
-    this.props.createLunchbox(user.id)
+  build (evt) {
+    this.props.createLunchbox(this.props.currentUser.user.id)
+  }
+
+  reset (evt) {
+    this.props.resetLunchbox(this.props.currentUser.user.id)
   }
 
   render () {
@@ -31,7 +34,8 @@ export default class ProfileScreen extends Component {
     return (
       <div className='profile'>
         <h2>Let&lsquo;s build a lunchbox together.</h2>
-        <button className='but form-control' onClick={this.handleSubmit}>Build My Lunch</button>
+        <button className='but form-control' onClick={this.build}>Build My Lunch</button>
+        <button className='but form-control' onClick={this.reset}>Reset</button>
         <h3>Imagine more features (like a list of lunchboxes) here!</h3>
       </div>
     )

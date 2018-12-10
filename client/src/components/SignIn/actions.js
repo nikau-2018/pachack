@@ -30,9 +30,7 @@ export const refreshUserObject = () => dispatch => {
 
   return request
     .get('/api/v1/auth/refreshuser', getHeaders())
-    .then(res => {
-      dispatch(refreshUser(res.data.user))
-    })
+    .then(res => dispatch(refreshUser(res.data.user)))
     .catch(({response}) => dispatch(refreshUserError(response.data.error)))
 }
 

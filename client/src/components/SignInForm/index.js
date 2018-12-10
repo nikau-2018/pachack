@@ -20,6 +20,7 @@ export default class SignInForm extends Component {
   }
 
   handleSubmit (e) {
+    e.preventDefault()
     this.props.signIn(this.state.username, this.state.password)
   }
 

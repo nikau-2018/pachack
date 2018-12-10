@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 import './styles.css'
 import Food from '../Food'
@@ -63,6 +63,7 @@ export default class Lunchbox extends Component {
               : other.map(this.renderFood)}
           </div>
         </div>
+        <button className='back-button' onClick={this.props.resetCurrentBox}>Back</button>
       </div>
     )
   }

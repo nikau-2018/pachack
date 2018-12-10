@@ -4,6 +4,7 @@ module.exports = {
   createLunchbox,
   getLunchbox,
   getUserLunchbox,
+  removeUserLunchbox,
   storeFoodSelection
 }
 
@@ -21,6 +22,12 @@ function getUserLunchbox (userId, db = connection) {
   return db('lunchboxes')
     .where('user_id', userId)
     .first()
+}
+
+function removeUserLunchbox (userId, db = connection) {
+  return db('lunchboxes')
+    .where('user_id', userId)
+    .del()
 }
 
 function storeFoodSelection (lunchboxId, data, db = connection) {
