@@ -1,3 +1,10 @@
+// WARNING TO FUTURE DEVS
+//
+// This repo contains a fairly hacky prototype (it was assembled at a hackathon, and later patched
+// into a deployed demo). That's not to take away from it or its intent, but expect to find
+// workarounds and plenty of untested code! It's not designed to be a long-lived product, rather to
+// demonstrate an idea. We hope you find it useful.
+
 require('dotenv').config()
 const server = require('./server')
 
