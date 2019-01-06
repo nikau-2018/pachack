@@ -23,6 +23,9 @@ router.use((err, req, res, next) => {
   next()
 })
 
+// Deal with annoying discrepancies between SQLite3 and Postgres
+const getId = idOrObject => idOrObject.hasOwnProperty('id') ? idOrObject.id : idOrObject
+
 function getOrCreateLunchbox (req, res) {
   const { userId } = req.body
 
@@ -32,7 +35,7 @@ function getOrCreateLunchbox (req, res) {
         return res.status(200).json({ ok: true, lunchbox })
       }
       createLunchbox(userId)
-        .then(([ id ]) => getLunchbox(id))
+        .then(([ id ]) => getLunchbox(getId(id)))
         .then(lunchbox => res.status(201).json({ ok: true, lunchbox }))
     })
     .catch(err => {

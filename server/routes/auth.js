@@ -42,10 +42,14 @@ function signIn (req, res) {
     .catch(() => unknownError(res))
 }
 
+// Deal with annoying discrepancies between SQLite3 and Postgres
+const getId = idOrObject => idOrObject.hasOwnProperty('id') ? idOrObject.id : idOrObject
+
 function register (req, res) {
   const { username, password, age } = req.body
   createUser({ username, password, age })
-    .then(([ id ]) => {
+    .then(([ idOrObject ]) => {
+      const id = getId(idOrObject)
       startSession(res, { id, username, age })
     })
     .catch(error => {
