@@ -22,5 +22,5 @@ function getUserById (id, db = connection) {
 
 function createUser ({ username, password, age }, db = connection) {
   return generateHash(password)
-    .then(hash => db('users').insert({ username, hash, age }))
+    .then(hash => db('users').insert({ username, hash, age }, [ 'id' ]))
 }

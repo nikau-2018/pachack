@@ -9,7 +9,7 @@ module.exports = {
 }
 
 function createLunchbox (userId, db = connection) {
-  return db('lunchboxes').insert({ user_id: userId })
+  return db('lunchboxes').insert({ user_id: userId }, [ 'id' ])
 }
 
 function getLunchbox (id, db = connection) {
